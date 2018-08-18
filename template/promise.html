@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" /></meta>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+		<link href="../image/kj.ico" rel="shortcut icon"></link>
+		<title>
+			promise . by Jeremy
+		</title>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<style>
+			.aa {
+				position: relative;
+				width: 100%;
+			}
+			
+			.bb {
+				position: relative;
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+				background-color: grey;
+				text-align: center;
+				line-height: 100px;
+				font-weight: bold;
+				font-size: 30px;
+				color: white;
+				margin-left: 10px;
+				margin-top: 20px;
+			}
+		</style>
+		<script>
+			$(document).ready(function() {
+				for(i = 0; i < 6; i++) {
+					$(".aa").append("<div class='bb bb" + i + "'></div>")
+				}
+
+				function a() {
+					return $.get("text/01.json", function(ll) { //文件传输过程，执行完之后会被回收，变量会消失。
+						aa = ll.num;
+					}).promise();
+				}
+
+				function b() {
+					return $.get("text/02.json", function(kk) {
+						bb = kk.num;
+					}).promise();
+				}
+
+				function c() {
+					return $.get("text/03.json", function(jj) {
+						cc = jj.num;
+					}).promise();
+				}
+
+				function d() {
+					return $.get("text/04.json", function(hh) {
+						dd = hh.num;
+					}).promise();
+				}
+
+				function e() {
+					return $.get("text/05.json", function(gg) {
+						ee = gg.num;
+					}).promise();
+				}
+
+				$.when(a()).then(b).then(c).then(d).then(e).then(function() {
+					for(i = 0; i < 5; i++) {
+						var zu = [aa, bb, cc, dd, ee]
+						$(".bb").eq(i).html(zu[i]);
+					}
+					var zhi = aa + bb + cc + dd + ee;
+					$(".bb5").html(zhi);
+					$(".bb5").css("background-color", "red")
+				})
+
+			})
+		</script>
+	</head>
+
+	<body>
+		<p>灰色5个数字是通过Ajax从json文件里获取的，分别把它们存到变量里。</p>
+		<p>做计算时，再把这些变量拿过来做计算使用。</p>
+		<div class="aa"></div>
+	</body>
+
+</html>

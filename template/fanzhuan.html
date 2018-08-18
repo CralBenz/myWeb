@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" /></meta>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+		<link href="../image/kj.ico" rel="shortcut icon"></link>
+		<title>
+			3D card . by Jeremy
+		</title>
+		
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+			html,body{
+				position: relative;
+				
+			}
+			.html:after{
+				content: "";
+				display: block;
+				clear: both;
+			}
+			.xzzt{
+				position: relative;
+				width: 240px;
+				margin: 100px auto;
+				cursor: pointer;
+				float: left;
+				margin-left: 100px;
+				transition: all 0.5s;
+				transform: rotate(6deg);
+				-webkit-transform-style: preserve-3d;
+				-moz-transform-style: preserve-3d;
+				-ms-transform-style: preserve-3d;
+				-o-transform-style: preserve-3d;
+			}
+			.xzzt:hover {
+				transform: rotate(0deg);
+				-webkit-transform: rotate(0deg);
+				-moz-transform: rotate(0deg);
+				-ms-transform: rotate(0deg);
+				-o-transform: rotate(0deg);
+				-webkit-transform: rotateY(180deg);
+				-moz-transform: rotateY(180deg);
+				-ms-transform: rotateY(180deg);
+				-o-transform: rotateY(180deg);
+			}
+			
+			.xzzt:hover .fkb{
+				-webkit-transform: rotateY(180deg);
+				-moz-transform: rotateY(180deg);
+				-ms-transform: rotateY(180deg);
+				-o-transform: rotateY(180deg);
+				box-shadow: 10px 10px 5px #A9A9A9;
+			}
+			.fkb:hover .wz{
+				
+				opacity: 1;
+			}
+			.fk {
+				position: relative;
+				width: 200px;
+				height: 280px;
+				margin: 20px;
+				background-color: orange;
+				box-shadow: 2px 3px 2px #A9A9A9;
+				-webkit-transform-style: preserve-3d;
+				-moz-transform-style: preserve-3d;
+				-ms-transform-style: preserve-3d;
+				-o-transform-style: preserve-3d;
+				transform:  translateZ(1PX);
+				-webkit-transform:  translateZ(1PX);
+				-moz-transform:  translateZ(1PX);
+				-ms-transform:  translateZ(1PX);
+				-o-transform:  translateZ(1PX);
+				background-image: url(img/background.jpg);
+				background-repeat: no-repeat;
+				background-size: 150% 100%;
+			}
+			
+			
+			.fkb {
+				position: absolute;
+				width: 200px;
+				height: 280px;
+				left: 20px;
+				top: 20px;
+				background-color: orange;
+				box-shadow: 2px 3px 2px #A9A9A9;
+				background-image: url(img/card-back.jpg);
+			}
+			.wz {
+				position: relative;
+				color: white;
+				font-family: "微软雅黑";
+				opacity: 0;
+				margin-top: 15px;
+				margin-left: 10px;
+				
+			}
+			
+			.wz-1 {
+				text-decoration: underline;
+				margin-left: 10px;
+				cursor: pointer;
+				width: 50px;
+				
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<div class="xzzt">
+			<div class="fkb">
+				<div class="wz">救命啊！</div>
+				<div class="wz">这个网页中病毒了</div>
+				<div class="wz">所有东西都被吸进漩涡里</div>
+				<br /><br /><br /><br />
+				<div class="wz wz-1">about</div>
+				<div class="wz wz-1">demo</div>
+			
+			</div>
+			<div class="fk"></div>
+			
+		</div>
+		<div class="xzzt">
+			<div class="fkb">
+				<div class="wz">救命啊！</div>
+				<div class="wz">这个网页中病毒了</div>
+				<div class="wz">所有东西都被吸进漩涡里</div>
+				<br /><br /><br /><br />
+				<div class="wz wz-1">about</div>
+				<div class="wz wz-1">demo</div>
+				
+			</div>
+			<div class="fk"></div>
+			
+		</div>
+	</body>
+
+</html>

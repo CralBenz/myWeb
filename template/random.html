@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" /></meta>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+		<link href="../image/kj.ico" rel="shortcut icon"></link>
+		<title>
+			去重随机数.by Jeremy
+		</title>
+	</head>
+	<style>
+		.kk {
+			position: relative;
+			width: 80%;
+			height: auto;
+			margin: 0 auto;
+			padding: 10px;
+			background-color: lavender;
+		}
+		
+		.ball {
+			position: relative;
+			display: inline-block;
+			text-align: center;
+			line-height: 100px;
+			font-size: 25px;
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			border-radius: 50%;
+			background-color: white;
+			color: red;
+			margin-left: 20px;
+		}
+		
+		.blueball {
+			border: 1px solid blue;
+			margin-left: 60px;
+			color: dodgerblue;
+		}
+		
+		#dblsubmit,
+		#closubmit {
+			position: relative;
+			width: 180px;
+			height: 50px;
+			line-height: 50px;
+			border: 1px solid grey;
+			color: black;
+			font-weight: bold;
+			font-size: 30px;
+			border-radius: 6px;
+			text-align: center;
+			cursor: pointer;
+			background-color: pink;
+			margin: 30px auto;
+		}
+		
+		.colorarea,
+		.doublearea {
+			position: relative;
+		}
+		
+		.cball {
+			position: relative;
+			display: inline-block;
+			text-align: center;
+			line-height: 100px;
+			font-size: 25px;
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			border-radius: 50%;
+			background-color: white;
+			color: red;
+			margin-left: 88px;
+		}
+		
+		.cblueball {
+			border: 1px solid blue;
+			margin-left: 35%;
+			margin-top: 20px;
+			color: dodgerblue;
+		}
+		
+		.cbb {
+			border: 1px solid blue;
+			color: dodgerblue;
+		}
+		
+		.meng1,
+		.meng2 {
+			position: absolute;
+			width: 100%;
+			height: 80px;
+			bottom: 0px;
+		}
+		
+		p {
+			text-align: center;
+		}
+		
+		@media only screen and (min-width: 100px) and (max-width: 640px) {
+			.kk {
+				width: 95%;
+				padding: 10px;
+			}
+			.ball {
+				width: 50px;
+				height: 50px;
+				margin-left: 1%;
+				line-height: 50px;
+			}
+			.blueball {
+				border: 1px solid blue;
+				margin-left: 42%;
+				color: dodgerblue;
+				margin-top: 5px;
+			}
+			#submit {
+				font-weight: normal;
+				font-size: 25px;
+				margin: 20px auto;
+			}
+			.cball {
+				width: 50px;
+				height: 50px;
+				margin-left: 4%;
+				line-height: 50px;
+			}
+			.cblueball {
+				border: 1px solid blue;
+				margin-left: 33%;
+				margin-top: 20px;
+				color: dodgerblue;
+			}
+			.cbb {
+				border: 1px solid blue;
+				color: dodgerblue;
+			}
+		}
+	</style>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script>
+		$(function() {
+			$(".meng1").hide();
+			$(".meng2").hide();
+			$("#closubmit").click(function() {
+				createRandom1();
+			})
+			$("#dblsubmit").click(function() {
+				createRandom2();
+			})
+		})
+		n = 0;
+		o = 0;
+
+		function createRandom1() {
+			n++;
+			if(n == 1) {
+				$("#closubmit").html("再选一次");
+			} else if(n == 2) {
+				$("#closubmit").html("最后一次");
+			} else if(n == 3) {
+				$("#closubmit").html("这注最旺");
+				$(".meng1").show();
+			}
+			var arr = [];
+			var json = {};
+			while(arr.length < 5) {
+				//产生单个随机数
+				var ranNum = Math.ceil(Math.random() * 34) + 1;
+				//通过判断json对象的索引值是否存在 来标记 是否重复
+				if(!json[ranNum]) {
+					json[ranNum] = 1;
+					arr.push(ranNum);
+				}
+			}
+			//				return arr;
+			for(var i = 0; i < arr.length; i++) {
+				$(".cball").eq(i).html(arr[i]);
+			}
+			var rro = [];
+			var jso = {};
+			while(rro.length < 2) {
+				var ranNum = Math.ceil(Math.random() * 11) + 1;
+				if(!jso[ranNum]) {
+					jso[ranNum] = 1;
+					rro.push(ranNum);
+				}
+			}
+			$(".cblueball").html(rro[0]);
+			$(".cbb").html(rro[1]);
+
+		}
+
+		function createRandom2() {
+			o++;
+			if(o == 1) {
+				$("#dblsubmit").html("再选一次");
+			} else if(o == 2) {
+				$("#dblsubmit").html("最后一次");
+			} else if(o == 3) {
+				$("#dblsubmit").html("这注最旺");
+				$(".meng2").show();
+			}
+			var arr = [];
+			var json = {};
+			while(arr.length < 6) {
+				//产生单个随机数
+				var ranNum = Math.ceil(Math.random() * 32) + 1;
+				//通过判断json对象的索引值是否存在 来标记 是否重复
+				if(!json[ranNum]) {
+					json[ranNum] = 1;
+					arr.push(ranNum);
+				}
+			}
+
+			//				return arr;
+			for(var i = 0; i < arr.length; i++) {
+				$(".ball").eq(i).html(arr[i]);
+			}
+			var blueball = Math.ceil(Math.random() * 15) + 1;
+			$(".blueball").html(blueball);
+		}
+	</script>
+
+	<body>
+		<p>双色球每周二，四，日21:15开奖</p>
+		<p>三次机会，帮你预测一组号码</p>
+		<div class="doublearea">
+			<div class="kk">
+				<div class="ball">&nbsp;</div>
+				<div class="ball">&nbsp;</div>
+				<div class="ball">&nbsp;</div>
+				<div class="ball">&nbsp;</div>
+				<div class="ball">&nbsp;</div>
+				<div class="ball">&nbsp;</div>
+				<div class="ball blueball">&nbsp;</div>
+			</div>
+			<div id="dblsubmit">双色球机选</div>
+			<div class="meng2"></div>
+		</div>
+		<p>大乐透每周一，三，六20:30开奖</p>
+		<p>三次机会，帮你预测一组号码</p>
+		<div class="colorarea">
+			<div class="kk">
+				<div class="cball">&nbsp;</div>
+				<div class="cball">&nbsp;</div>
+				<div class="cball">&nbsp;</div>
+				<div class="cball">&nbsp;</div>
+				<div class="cball">&nbsp;</div>
+				<div class="cball cblueball">&nbsp;</div>
+				<div class="cball cbb">&nbsp;</div>
+			</div>
+			<div id="closubmit">大乐透机选</div>
+			<div class="meng1"></div>
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /></meta>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+		<link href="../image/kj.ico" rel="shortcut icon"></link>
+		<title>
+			卡片管理 . by Jeremy
+		</title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+			body{
+				background-color: #F4F5F8;
+			}
+			.card,.card1{
+				position: relative;
+				width: 450px;
+				padding: 10px 20px 75px 20px;
+				background-color: white;
+				margin: 50px auto;
+			}
+			.card p,.card1 p{
+				text-align: center;
+				line-height: 45px;
+				margin-bottom: 20px;
+				border-bottom: 1px solid #F4F5F8;
+			}
+			.card input{
+				height: 35px;
+				margin-bottom: 5px;
+				border: 1px solid #BFBFBF;
+				padding-left: 5px;
+			}
+			#add,#del{
+				position: absolute;
+				top: 15px;
+				right: 85px;
+				padding: 3px 5px;
+				border: 1px solid #F4F5F8;
+				cursor: pointer;
+				color: #5896E9;
+			}
+			#del{
+				right: 15px;
+				color: #DE5470;
+			}
+			input[name=use]{
+				padding: 3px 5px;
+				border: 1px solid #BFBFBF;
+				cursor: pointer;
+				color: #DE5470;
+			}
+			#tijiao,#xiugai{
+				position: absolute;
+				left: 0px;
+				right: 0px;
+				margin: auto;
+				bottom: 10px;
+				margin-bottom: 15px;
+				width: 100px;
+				padding: 3px 5px;
+				border: 1px solid #BFBFBF;
+				cursor: pointer;
+				color: #5896E9;
+			}
+			#xiugai{
+				height: 35px;
+			}
+			.card1 span{
+				display: inline-block;
+				position: relative;
+				width: 150px;
+				text-align: center;
+				margin-bottom: 10px;
+			}
+			.time{
+				width: 50px!important;			
+				}
+			input[name=use]	{
+				color: #5896E9;
+			}
+		</style>
+	</head>
+	<body>
+		<form id="card" action="" method="">
+			<div class="card">
+				<p>卡片登记</p>
+				<input type="button" id="tijiao" value="确认提交" />
+				<input type="button" id="add" value="添加一项" />
+				<input type="button" id="del" value="移除一项" />
+				姓名：<input type="text" name="username" /><br />
+				卡名：<input type="text" name="cardname"/><br />
+				电话：<input type="text" name="telephone"/><br />
+				<div class="linecon">项目：<input type="text" name="conts0" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;次数：<input style="width: 50px;" type="text" name="conttimes0" /></div>
+			</div>
+		</form>
+		<form action="" method="">
+			<div class="card1">
+				<p>暂无卡片</p>
+			</div>
+		</form>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+////////////////////添加一项
+				var n=o=0;
+				$('#add').click(function(){
+					n++;
+					o++;
+					$('.card').append('<div class="linecon">项目：<input type="text" name="conts'+n+'"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;次数：<input style="width: 50px;" type="text" name="conttimes'+o+'" /></div>')
+				});
+///////////////////删除一项
+				$('#del').click(function(){
+					if($('.card').children().length>11){
+						$('.card').children().eq(-1).remove();
+						n--;
+						o--;
+					}
+				});
+///////////////////提交卡
+				//不为空提示
+				$('.card').on('focus','input',function(){
+					$(this).css("background-color","white")
+				})
+				var data = {};
+				$('.card').on('click','#tijiao',function(){
+					//不为空
+					var t = $('#card').serializeArray();
+					var boo=true;
+					for(var i=0;i<t.length;i++){
+					     if(t[i].value==""){
+							  boo=false;
+							  alert('请填写完整再提交');
+							  $('.card').find('input').eq(i+3).css("background-color","pink");
+					          return false;
+					    }
+					};
+					if(boo){
+						$.each(t, function () {
+					   	 data[this.name] = this.value;
+						});
+					}
+					console.log(JSON.stringify(data));
+				
+//////////////////////浦数据
+					var dataval = Object.values(data);
+					console.log(dataval);
+					if(dataval.length){
+						$('.card1').html(
+							'<p>'+data.cardname+'</p>'+
+							'姓名：<span class="username">'+data.username+'</span><br />'+
+							'电话：<span class="telephone">'+data.telephone+'</span><br />'
+							)
+						var l=(dataval.length-3)/2;
+						for(var i=0;i<l;i++){
+							$('.card1').append(
+								'<div class="linecon1">项目：<span class="cont">'+dataval[2*i+3]+'</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;次数：<span class="time">'+dataval[2*i+3+1]+'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" name="use" value="使用" /></div>'
+							);
+						}
+					}
+					
+				});
+				
+///////////////////修改
+				$('.card1').on('click',"input[name=use]",function(){
+					var r = confirm('确认消费？');
+					var c =$(this).siblings('.time').html();
+					var index = $(this).parent().index()-5;
+					if(r&&c>0){
+						data['conttimes'+index]=(c-1);
+						$(this).siblings('.time').html(c-1);
+						var dataval = Object.values(data);
+						$(this).siblings('.time').html(dataval[2*index+4]);
+						var jsonp= JSON.stringify(data);
+//						console.log(dataval);
+//						console.log(index);
+						console.log(jsonp);
+					}else if(c==0){
+							alert('想啥呢？用完了！')
+					}
+				});
+				
+				
+			});
+		</script>
+	</body>
+</html>

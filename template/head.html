@@ -1,0 +1,411 @@
+<!--<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title></title>
+		<link rel="stylesheet" href="css/head.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="js/head.js"></script>
+	</head>
+	
+
+	<body>-->
+	<script>
+		$(function() {
+			if($(window).width() < 640) {
+				$(".phonexbox").show();
+				var i = 0;
+				var k = 0;
+				$(".phonexbox").click(function() {
+					if(k == 0) {
+						$(this).removeClass("zongti1");
+						$(".sa").removeClass("shangzou1");
+						$(".xc").removeClass("xiazou1");
+						$(".zx").removeClass("hide");
+						$(this).addClass("zongti");
+						$(".sa").addClass("shangzou");
+						$(".xc").addClass("xiazou");
+						$(".zx").addClass("show");
+						k = 1;
+					} else if(k == 1) {
+						$(this).removeClass("zongti");
+						$(".sa").removeClass("shangzou");
+						$(".xc").removeClass("xiazou");
+						$(".zx").removeClass("show");
+						$(this).addClass("zongti1");
+						$(".sa").addClass("shangzou1");
+						$(".xc").addClass("xiazou1");
+						$(".zx").addClass("hide");
+						k = 0;
+					}
+					if(i == 0) {
+						$(".phoneright").animate({
+							left: "0"
+						}, 800)
+						$(".phonelisttop").children(".zijiji").slideUp(500);
+						$(".phonelisttop").children(".phonelistzi").removeClass("heihei");
+						i = 1;
+					} else if(i == 1) {
+						$(".phoneright").animate({
+							left: "100%"
+						}, 800)
+						i = 0;
+					}
+				})
+				$(".zijiji").hide();
+				$(".phonelisttop").click(function() {
+					$(this).children(".zijiji").slideToggle(500);
+					$(this).siblings().children(".zijiji").slideUp(500);
+					$(this).children(".phonelistzi").addClass("heihei");
+					$(this).siblings().children(".phonelistzi").removeClass("heihei");
+				})
+				$(".zijitext").click(function() {
+					$(this).children(".zijiji").slideToggle(500);
+					$(this).siblings().children(".zijiji").slideUp(500);
+					$(this).children(".phonelistzi").addClass("heihei");
+					$(this).siblings().children(".phonelistzi").removeClass("heihei");
+				})
+				$(".zijiji").click(function() {
+					event.stopPropagation();
+				})
+			} else {
+				$(".phonexbox").hide();
+				$(".phoneright").hide();
+			}
+
+		})
+	</script>
+		<div class="top">
+			<div class="head">
+				<div class="logo">
+					<img class="logopic" src="img/logo.png" />
+				</div>
+				<div class="boxleft">
+					<div class="nav">
+						<ul class="ulist">
+							<li class="list list-1 list0">车型
+								<div class="huangxian"></div>
+							</li>
+							<li class="list list-1 list1">品牌
+								<div class="huangxian"></div>
+							</li>
+							<li class="list list-1 list2">车主服务
+								<div class="huangxian"></div>
+							</li>
+							<li class="list list-1 list3">体验
+								<div class="huangxian"></div>
+							</li>
+							<li class="list list-2 list4">赛车运动
+								<div class="huangxian"></div>
+							</li>
+							<li class="list list-2 list5">商店
+								<div class="huangxian"></div>
+							</li>
+						</ul>
+						<ul class="dulist">
+
+						</ul>
+					</div>
+				</div>
+				<div class="boxright">
+					<div class="kt kt0">
+						<i class="fa fa-cog fa-lg" aria-hidden="true"></i>
+					</div>
+					<div class="kt kt1">
+						<i class="fa fa-share-alt fa-lg" aria-hidden="true"></i>
+					</div>
+					<div class="kt kt2">
+						<i class="fa fa-search fa-lg" aria-hidden="true"></i>
+					</div>
+					<div class="kt kt3">
+						<i class="fa fa-language fa-lg" aria-hidden="true"></i>
+					</div>
+				</div>
+				<div class="phonexbox">
+					<div class="santiao">
+						<div class="sa"></div>
+						<div class="zb"></div>
+						<div class="xc"></div>
+						<div class="zx"></div>
+					</div>
+				</div>
+
+				<div class="slide">
+					<div class="downlist">
+						<div class="leftlist"></div>
+					</div>
+				</div>
+			</div>
+			<div class="phoneright">
+				<div class="phonelisttop phonelisttop0" type="0">
+					<p class="phonelistzi">车型</p><i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
+					<div class="xxxx"></div>
+					<div class="zijiji">
+						<div class="zijitext">
+							<p class="phonelistzi">HURACÁN</p><i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
+							<div class="xxxx"></div>
+							<div class="zijiji">
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Huracán Coupé</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Huracán Spyder</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Huracán RWD Coupé</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Huracán RWD Spyder</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Huracán Performante</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Huracán Avio</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Overview</p>
+								</div>
+							</div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">AVENTADOR</p><i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
+							<div class="xxxx"></div>
+							<div class="zijiji">
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Aventador S Coupé</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Aventador S Roadster</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Overview</p>
+								</div>
+							</div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">限量版型号</p><i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
+							<div class="xxxx"></div>
+							<div class="zijiji">
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Centenario Roadster</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Centenario</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Veneno Roadster</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Overview</p>
+								</div>
+							</div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">概念车</p><i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
+							<div class="xxxx"></div>
+							<div class="zijiji">
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Asterion</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Estoque</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Overview</p>
+								</div>
+								
+							</div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">Ad Personam高级个性化方案</p>
+							<div class="xxxx"></div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">OVERVIEW</p>
+							<div class="xxxx"></div>
+						</div>
+					</div>
+				</div>
+				<div class="phonelisttop phonelisttop1">
+					<p class="phonelistzi">品牌</p><i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
+					<div class="xxxx"></div>
+					<div class="zijiji">
+						<div class="zijitext">
+							<p class="phonelistzi">人物</p><i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
+							<div class="xxxx"></div>
+							<div class="zijiji">
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Ferruccio Lamborghini</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Marcello Gandini</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Giampaolo Dallara</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Paolo Stanzani</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Overview</p>
+								</div>
+							</div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">历史</p>
+							<div class="xxxx"></div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">杰作</p>
+							<div class="xxxx"></div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">设计</p>
+							<div class="xxxx"></div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">创新&成就</p><i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
+							<div class="xxxx"></div>
+							<div class="zijiji">
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Terzo Millennio</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Forged Composites®</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">碳纤维</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Overview</p>
+								</div>
+							</div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">Overview</p>
+							<div class="xxxx"></div>
+						</div>
+					</div>
+				</div>
+				<div class="phonelisttop phonelisttop2">
+					<p class="phonelistzi">车主服务</p><i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
+					<div class="xxxx"></div>
+					<div class="zijiji">
+						<div class="zijitext">
+							<p class="phonelistzi">经销商定位器</p><i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
+							<div class="xxxx"></div>
+							<div class="zijiji">
+								<div class="zijitext">
+									<p class="phonelistzi zuili">陈列室</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">服务定位器</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">碰撞中心</p>
+								</div>
+							</div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">易手车定位器</p>
+							<div class="xxxx"></div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">原装辅件</p>
+							<div class="xxxx"></div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">零配件</p>
+							<div class="xxxx"></div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">客户服务 </p><i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
+							<div class="xxxx"></div>
+							<div class="zijiji">
+								<div class="zijitext">
+									<p class="phonelistzi zuili">金融服务</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">援助</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">保修</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">关怀计划</p>
+								</div>
+								<div class="zijitext">
+									<p class="phonelistzi zuili">Overview</p>
+								</div>
+							</div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">Polo Storico修复中心</p>
+							<div class="xxxx"></div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">Overview</p>
+							<div class="xxxx"></div>
+						</div>
+					</div>
+				</div>
+				<div class="phonelisttop phonelisttop3">
+					<p class="phonelistzi">体验</p><i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
+					<div class="xxxx"></div>
+					<div class="zijiji">
+						<div class="zijitext">
+							<p class="phonelistzi">新闻</p>
+							<div class="xxxx"></div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">活动</p>
+							<div class="xxxx"></div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">博物馆</p>
+							<div class="xxxx"></div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">Accademia驾驶学院</p>
+							<div class="xxxx"></div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">Esperienza驾驶体验活动</p>
+							<div class="xxxx"></div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">移动APP</p>
+							<div class="xxxx"></div>
+						</div>
+						<div class="zijitext">
+							<p class="phonelistzi">Overview</p>
+							<div class="xxxx"></div>
+						</div>
+					</div>
+				</div>
+				<div class="phonelisttop">
+					<p class="phonelistzi">赛车运动</p>
+					<div class="xxxx"></div>
+				</div>
+				<div class="phonelisttop">
+					<p class="phonelistzi">商店</p>
+					<div class="xxxx"></div>
+				</div>
+				<div class="phoneicon">
+					<i class="fa fa-share-alt fa-lg" aria-hidden="true"></i>
+					<i class="fa fa-weibo fa-lg" aria-hidden="true"></i>
+					<i class="fa fa-weixin fa-lg" aria-hidden="true"></i>
+				</div>
+				<div class="phoneserch">
+					<p class="ssssss"><i class="fa fa-search fa-2x" aria-hidden="true"></i></p><input type="text" name="" id="phoneserch" value=" " />
+					<p class="enen">EN</p>
+				</div>
+			</div>
+		</div>
+
+	<!--</body>
+</html>-->

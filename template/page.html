@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" /></meta>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+		<link href="../image/kj.ico" rel="shortcut icon"></link>
+		<title>
+			翻页效果 . by Jeremy
+		</title>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<style>
+			.one {
+				position: relative;
+				background-color: orange;
+				text-align: center;
+				font-weight: bold;
+				color: #3A3D43;
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+				line-height: 100px;
+			}
+			
+			.list {
+				position: relative;
+				text-align: center;
+				width: 100%;
+				height: auto;
+				display: none;
+			}
+			
+			.list_curr {
+				display: block;
+			}
+			
+			.dian_father {
+				position: relative;
+				width: 100%;
+				height: auto;
+				padding: 0px;
+				padding-top: 40px;
+				text-align: center;
+			}
+			
+			.dian {
+				position: relative;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				border: 1px solid #ccc;
+				font-size: 18px;
+				margin-right: 10px;
+				cursor: pointer;
+			}
+			
+			.dian:hover,
+			.dian_curr {
+				color: #58BEAB;
+				border: 1px solid #58BEAB;
+			}
+			
+			.left {
+				position: relative;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				border: 1px solid #3A3D43;
+				font-size: 18px;
+				margin-right: 20px;
+				color: white;
+				cursor: pointer;
+				background-color: #58BEAB;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			
+			.right {
+				position: relative;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				border: 1px solid #D2D4DA;
+				color: white;
+				font-size: 18px;
+				margin-right: 20px;
+				cursor: pointer;
+				background-color: #58BEAB;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			
+			.button {
+				position: relative;
+				width: 100px;
+				height: 50px;
+				/*border: 1px solid #3A3D43;*/
+				background-color: #E1EFFB;
+				margin: 0px auto;
+				line-height: 50px;
+				text-align: center;
+				cursor: pointer;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+		</style>
+		<script>
+			$(document).ready(function() {
+				var a = $("#father");
+				var b = $(".list");
+				var g = $(".dian");
+				var sh = a.offset().top;
+				//点击页数方框。判定是第几页
+				$(".dian_father").on("click", ".dian", function(e) {
+					var index = $(this).data("index");
+					b.removeClass("list_curr");
+					b.eq(index - 1).addClass("list_curr");
+					g.removeClass("dian_curr");
+					$(this).addClass("dian_curr");
+				});
+				//点击左边向左翻页
+				$(".left").click(function(e) {
+					var bb = $(".dian").index($(".dian.dian_curr"));
+					console.log(bb)
+					if(bb!==0){
+						b.removeClass("list_curr");
+						b.eq(bb - 1).addClass("list_curr");
+						g.removeClass("dian_curr");
+						g.eq(bb - 1).addClass("dian_curr");
+					}else{
+						alert("The First Page")
+					}
+					
+				})
+				//点击右边向右翻页
+				$(".right").click(function(e) {
+					var bb = $(".dian").index($(".dian.dian_curr"));
+					var cc = $('.dian_father').children('.dian').length;
+					var dd = $("#father").find(".list").eq(0); //找到父元素id为father的子元素名class为dian的第一个元素
+					var ee = $(".dian_father").find(".dian").eq(0);
+					if(cc - 1 != bb) {
+						console.log(bb)
+						b.removeClass("list_curr");
+						b.eq(bb + 1).addClass("list_curr");
+						g.removeClass("dian_curr");
+						g.eq(bb + 1).addClass("dian_curr");
+					} else {
+						alert("The Last Page")
+//						b.removeClass("list_curr");
+//						dd.addClass("list_curr");
+//						g.removeClass("dian_curr");
+//						ee.addClass("dian_curr");
+					}
+				})
+			});
+			$(document).ready(function() {
+				$(".button").click(function() {
+					alert("该页面是第" + ($(".dian").index($(".dian.dian_curr")) + 1) + "页");
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="father">
+			<div class="list list_curr">
+				<div class="one">one</div>
+				<div class="one">one</div>
+				<div class="one">one</div>
+			</div>
+
+			<div class="list">
+				<div class="one">two</div>
+				<div class="one">two</div>
+				<div class="one">two</div>
+			</div>
+			<div class="list">
+				<div class="one">three</div>
+				<div class="one">three</div>
+				<div class="one">three</div>
+			</div>
+			<div class="list">
+				<div class="one">four</div>
+				<div class="one">four</div>
+				<div class="one">four</div>
+			</div>
+			<ul class="dian_father">
+				<li class="left">左</li>
+				<li class="dian dian_curr" data-index="1">1</li>
+				<li class="dian" data-index="2">2</li>
+				<li class="dian" data-index="3">3</li>
+				<li class="dian" data-index="4">4</li>
+				<li class="right">右</li>
+			</ul>
+		</div>
+		<div class="button">获取页数</div>
+	</body>
+
+</html>

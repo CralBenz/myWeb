@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" /></meta>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+		<link href="../image/kj.ico" rel="shortcut icon"></link>
+		<title>
+			login . by Jeremy
+		</title>
+		<style type="text/css">
+			* {
+				position: relative;
+				margin: 0px;
+				border: 0px;
+				box-sizing: border-box;
+			}
+			
+			.top {
+				position: relative;
+				width: 100%;
+				height: 50px;
+				background-color: white;
+			}
+			
+			.med {
+				position: relative;
+				width: 100%;
+				background-color: #F5F5F5;
+				border: 1px solid #F5F5F5;
+			}
+			
+			.wbk {
+				position: relative;
+				width: 70%;
+				margin: 0 auto;
+			}
+			
+			#text {
+				position: relative;
+				width: 100%;
+				margin-top: 100px;
+				font-size: 25px;
+				text-align: center;
+			}
+			
+			#shuru {
+				position: relative;
+				width: 100%;
+				margin: 30px auto;
+				text-align: center;
+			}
+			
+			#zh {
+				position: relative;
+				width: 500px;
+				height: 50px;
+				font-size: 13px;
+				border: 1px solid darkgray;
+				border-radius: 5px;
+			}
+			
+			#mm {
+				position: relative;
+				width: 500px;
+				height: 50px;
+				font-size: 13px;
+				border: 1px solid darkgray;
+				border-radius: 5px;
+			}
+			
+			#mm1 {
+				position: relative;
+				width: 500px;
+				height: 50px;
+				font-size: 13px;
+				border: 1px solid darkgray;
+				border-radius: 5px;
+			}
+			
+			.gouxuankuang {
+				position: relative;
+				font-size: 13px;
+				width: 52%;
+				margin: 5px auto;
+				text-align: justify;
+			}
+			
+			.gouxuankuang:after {
+				content: '';
+				display: inline-block;
+				width: 100%;
+				position: relative;
+			}
+			
+			#denglu {
+				position: relative;
+				display: inline-block;
+				width: 100px;
+				height: 30px;
+				font-size: 13px;
+				cursor: pointer;
+				border: 1px solid darkgray;
+			}
+			
+			#zhuce {
+				position: relative;
+				display: inline-block;
+				width: 100px;
+				height: 30px;
+				font-size: 13px;
+				cursor: pointer;
+				border: 1px solid darkgray;
+			}
+			
+			#wangji {
+				position: relative;
+				display: inline-block;
+				width: 100px;
+				height: 30px;
+				font-size: 13px;
+				cursor: pointer;
+				border: 1px solid darkgray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="top"></div>
+		<div class="med">
+			<div class="wbk">
+				<div id="text">欢迎登陆 老铁，稳稳稳 前端设计网站</div>
+				<div id="shuru">
+					<input id="zh" type="text" placeholder=" ID" value="" />
+				</div>
+
+				<div id="shuru">
+					<input id="mm" type="password" placeholder=" Password" value="" />
+				</div>
+
+				<div id="shuru">
+					<input id="mm1" type="password" placeholder=" Confirm Password" value="" />
+				</div>
+
+				<div class="gouxuankuang">
+					<input type="button" id="denglu" onclick="yz()" value="登陆" />
+					<a href="sinin.html"><input type="button" id="zhuce" onclick="zhuce" value="注册" /></a>
+					<a href="forget.html"><input type="button" id="wangji" onclick="wangji()" value="忘记密码" /></a>
+				</div>
+			</div>
+		</div>
+		</div>
+		<script>
+			function yz() {
+				var zh = document.getElementById("zh").value; //获取账号的输入值。
+				var mm = document.getElementById("mm").value; //获取密码的输入值。
+				var mm1 = document.getElementById("mm1").value; //获取确认密码的输入值。
+				var chaxun = sessionStorage.getItem(zh);
+				if(zh == '') {
+					alert("请输入账号");
+				} else {
+					if(chaxun == null) { //查询输入的账号看存库里面有没有,如果没有查到未注册。
+						alert("该用户尚未注册");
+					} else { //可以查到在进行下一步验证密码。
+						var yiyouzhanghao = sessionStorage.getItem(zh); //获得已有账号的密码
+						if(yiyouzhanghao == mm && yiyouzhanghao == mm1 && mm == mm1) { //如果密码相等则跳转页面
+							alert('登陆成功，谢谢')
+							window.location.href = "http://development.cralbenz.club/#/repertory"; //条件符合跳转至百度。
+						} else { //否则不等的多种情况
+							if(yiyouzhanghao == mm) { //如果账号密码匹配
+								var kk = document.getElementById("mm1");
+								alert("确认密码输入有误");
+								kk.style.backgroundColor = "pink";
+							} else {
+								var zz = document.getElementById("zh");
+								var jj = document.getElementById("mm");
+								alert("账号或密码输入有误");
+								zz.style.backgroundColor = "pink";
+								jj.style.backgroundColor = "pink";
+							}
+						}
+					}
+				}
+
+			}
+		</script>
+	</body>
+
+</html>

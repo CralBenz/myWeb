@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" /></meta>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+		<link href="../image/kj.ico" rel="shortcut icon"></link>
+		<title>
+			watch . by Jeremy
+		</title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+			html{
+				background-color: black;
+			}
+			
+			#biaopan {
+				position: relative;
+				margin: 100px auto;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				background-color: black;
+			}
+			
+			#miaozhen {
+				position: absolute;
+				width: 2px;
+				height: 280px;
+				margin-top: 20px;
+				margin-left: 299px;
+				background-color: dodgerblue;
+				transform-origin: 50% 100%;
+				-webkit-transform-origin: 50% 100%;
+				-moz-transform-origin: 50% 100%;
+				-ms-transform-origin: 50% 100%;
+				-o-transform-origin: 50% 100%;
+				z-index: 8;
+			}
+			#fenzhen {
+				position: absolute;
+				width: 4px;
+				height: 230px;
+				margin-top: 70px;
+				margin-left: 298px;
+				background-color: orange;
+				transform-origin: 50% 100%;
+				-webkit-transform-origin: 50% 100%;
+				-moz-transform-origin: 50% 100%;
+				-ms-transform-origin: 50% 100%;
+				-o-transform-origin: 50% 100%;
+				z-index: 8;
+			}
+			#shizhen {
+				position: absolute;
+				width: 8px;
+				height: 180px;
+				margin-top:120px;
+				margin-left:296px;
+				background-color: orangered;
+				transform-origin: 50% 100%;
+				-webkit-transform-origin: 50% 100%;
+				-moz-transform-origin: 50% 100%;
+				-ms-transform-origin: 50% 100%;
+				-o-transform-origin: 50% 100%;
+				z-index: 8;
+			}
+			
+			.y1 {
+				position: absolute;
+				width: 20px;
+				height: 40px;
+				border-radius: 50% 50% 0 0 ;
+				top: 7px;
+				left: -9px;
+				background-color: dodgerblue;
+			}
+			
+			.y2 {
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				top: 271px;
+				left: -10px;
+				background-color: dodgerblue;
+			}
+			.s0{
+				position: absolute;
+				width: 4px;
+				height: 50px;
+				background-color:white;
+				left: 299px;
+				top: 0px;
+			}
+			.y3{
+				position: absolute;
+				width: 50px;
+				height: 4px;
+				background-color:white;
+				left: 546px;
+				top: 299px;
+			}
+			.x6{
+				position: absolute;
+				width: 4px;
+				height: 50px;
+				background-color:white;
+				left: 299px;
+				top: 546px;
+			}
+			.z9{
+				position: absolute;
+				width: 50px;
+				height: 4px;
+				background-color:white;
+				left: 0px;
+				top: 299px;
+			}
+			.bpkd {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				border: 4px solid white;
+				transform: rotate(30deg);
+				-webkit-transform: rotate(30deg);
+				-moz-transform: rotate(30deg);
+				-ms-transform: rotate(30deg);
+				-o-transform: rotate(30deg);
+				transform-origin: 50% 50%;
+				-webkit-transform-origin: 50% 50%;
+				-moz-transform-origin: 50% 50%;
+				-ms-transform-origin: 50% 50%;
+				-o-transform-origin: 50% 50%;
+			}
+			.bpkd1 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				transform: rotate(-30deg);
+				-webkit-transform: rotate(-30deg);
+				-moz-transform: rotate(-30deg);
+				-ms-transform: rotate(-30deg);
+				-o-transform: rotate(-30deg);
+				transform-origin: 50% 50%;
+				-webkit-transform-origin: 50% 50%;
+				-moz-transform-origin: 50% 50%;
+				-ms-transform-origin: 50% 50%;
+				-o-transform-origin: 50% 50%;
+			}
+			.bpkd2 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				color:white;
+			}
+			.s0-1{
+				position: absolute;
+				left: 263px;
+				top: 24px;
+				font-size: 55px;
+				font-family: "微软雅黑";
+			}
+			.y3-1{
+				position: absolute;
+				left: 538px;
+				top: 258px;
+				font-size: 60px;
+				font-family:"微软雅黑";
+			}
+			.x6-1{
+				position: absolute;
+				left: 280px;
+				top: 500px;
+				font-size: 60px;
+				font-family:"微软雅黑";
+			}
+			.z9-1{
+				position: absolute;
+				left: 28px;
+				top: 254px;
+				font-size: 60px;
+				font-family:"微软雅黑";
+			}
+			.bpkd3 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				transform: rotate(0deg);
+				-webkit-transform: rotate(0deg);
+				-moz-transform: rotate(0deg);
+				-ms-transform: rotate(0deg);
+				-o-transform: rotate(0deg);
+				transform-origin: 50% 50%;
+				-webkit-transform-origin: 50% 50%;
+				-moz-transform-origin: 50% 50%;
+				-ms-transform-origin: 50% 50%;
+				-o-transform-origin: 50% 50%;
+			}
+			.bpkd4 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				transform: rotate(6deg);
+				-webkit-transform: rotate(6deg);
+				-moz-transform: rotate(6deg);
+				-ms-transform: rotate(6deg);
+				-o-transform: rotate(6deg);
+				transform-origin: 50% 50%;
+				-webkit-transform-origin: 50% 50%;
+				-moz-transform-origin: 50% 50%;
+				-ms-transform-origin: 50% 50%;
+				-o-transform-origin: 50% 50%;
+			}
+			.bpkd5 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				transform: rotate(12deg);
+				-webkit-transform: rotate(12deg);
+				-moz-transform: rotate(12deg);
+				-ms-transform: rotate(12deg);
+				-o-transform: rotate(12deg);
+				transform-origin: 50% 50%;
+				-webkit-transform-origin: 50% 50%;
+				-moz-transform-origin: 50% 50%;
+				-ms-transform-origin: 50% 50%;
+				-o-transform-origin: 50% 50%;
+			}
+			.bpkd6 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				transform: rotate(18deg);
+				-webkit-transform: rotate(18deg);
+				-moz-transform: rotate(18deg);
+				-ms-transform: rotate(18deg);
+				-o-transform: rotate(18deg);
+				transform-origin: 50% 50%;
+				-webkit-transform-origin: 50% 50%;
+				-moz-transform-origin: 50% 50%;
+				-ms-transform-origin: 50% 50%;
+				-o-transform-origin: 50% 50%;
+			}
+			.bpkd7 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				transform: rotate(24deg);
+				-webkit-transform: rotate(24deg);
+				-moz-transform: rotate(24deg);
+				-ms-transform: rotate(24deg);
+				-o-transform: rotate(24deg);
+				transform-origin: 50% 50%;
+				-webkit-transform-origin: 50% 50%;
+				-moz-transform-origin: 50% 50%;
+				-ms-transform-origin: 50% 50%;
+				-o-transform-origin: 50% 50%;
+			}
+			.bpkd9 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				transform: rotate(-6deg);
+				-webkit-transform: rotate(-6deg);
+				-moz-transform: rotate(-6deg);
+				-ms-transform: rotate(-6deg);
+				-o-transform: rotate(-6deg);
+				transform-origin: 50% 50%;
+				-webkit-transform-origin: 50% 50%;
+				-moz-transform-origin: 50% 50%;
+				-ms-transform-origin: 50% 50%;
+				-o-transform-origin: 50% 50%;
+			}
+			.bpkd10 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				transform: rotate(-12deg);
+				-webkit-transform: rotate(-12deg);
+				-moz-transform: rotate(-12deg);
+				-ms-transform: rotate(-12deg);
+				-o-transform: rotate(-12deg);
+				transform-origin: 50% 50%;
+				-webkit-transform-origin: 50% 50%;
+				-moz-transform-origin: 50% 50%;
+				-ms-transform-origin: 50% 50%;
+				-o-transform-origin: 50% 50%;
+			}
+			.bpkd11 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				transform: rotate(-18deg);
+				-webkit-transform: rotate(-18deg);
+				-moz-transform: rotate(-18deg);
+				-ms-transform: rotate(-18deg);
+				-o-transform: rotate(-18deg);
+				transform-origin: 50% 50%;
+				-webkit-transform-origin: 50% 50%;
+				-moz-transform-origin: 50% 50%;
+				-ms-transform-origin: 50% 50%;
+				-o-transform-origin: 50% 50%;
+			}
+			.bpkd12 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				transform: rotate(-24deg);
+				-webkit-transform: rotate(-24deg);
+				-moz-transform: rotate(-24deg);
+				-ms-transform: rotate(-24deg);
+				-o-transform: rotate(-24deg);
+				transform-origin: 50% 50%;
+				-webkit-transform-origin: 50% 50%;
+				-moz-transform-origin: 50% 50%;
+				-ms-transform-origin: 50% 50%;
+				-o-transform-origin: 50% 50%;
+			}
+			.bpkd13 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				transform: rotate(-36deg);
+				-webkit-transform: rotate(-36deg);
+				-moz-transform: rotate(-36deg);
+				-ms-transform: rotate(-36deg);
+				-o-transform: rotate(-36deg);
+				transform-origin: 50% 50%;
+				-webkit-transform-origin: 50% 50%;
+				-moz-transform-origin: 50% 50%;
+				-ms-transform-origin: 50% 50%;
+				-o-transform-origin: 50% 50%;
+			}
+			.bpkd14 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				transform: rotate(36deg);
+				-webkit-transform: rotate(36deg);
+				-moz-transform: rotate(36deg);
+				-ms-transform: rotate(36deg);
+				-o-transform: rotate(36deg);
+				transform-origin: 50% 50%;
+				-webkit-transform-origin: 50% 50%;
+				-moz-transform-origin: 50% 50%;
+				-ms-transform-origin: 50% 50%;
+				-o-transform-origin: 50% 50%;
+			}
+			.bpkd15 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				transform: rotate(42deg);
+				-webkit-transform: rotate(42deg);
+				-moz-transform: rotate(42deg);
+				-ms-transform: rotate(42deg);
+				-o-transform: rotate(42deg);
+				transform-origin: 50% 50%;
+				-webkit-transform-origin: 50% 50%;
+				-moz-transform-origin: 50% 50%;
+				-ms-transform-origin: 50% 50%;
+				-o-transform-origin: 50% 50%;
+			}
+			.bpkd16 {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
+				transform: rotate(-42deg);
+				-webkit-transform: rotate(-42deg);
+				-moz-transform: rotate(-42deg);
+				-ms-transform: rotate(-42deg);
+				-o-transform: rotate(-42deg);
+				transform-origin: 50% 50%;
+				-webkit-transform-origin: 50% 50%;
+				-moz-transform-origin: 50% 50%;
+				-ms-transform-origin: 50% 50%;
+				-o-transform-origin: 50% 50%;
+			}
+			
+			.s0-2{
+				position: absolute;
+				width: 2px;
+				height: 20px;
+				background-color: white;
+				left: 299px;
+				top: 4px;
+			}
+			.y3-2{
+				position: absolute;
+				width: 20px;
+				height: 2px;
+				background-color: white;
+				left: 576px;
+				top: 299px;
+			}
+			.x6-2{
+				position: absolute;
+				width: 2px;
+				height: 20px;
+				background-color: white;
+				left: 299px;
+				top: 576px;
+			}
+			.z9-2{
+				position: absolute;
+				width: 20px;
+				height: 2px;
+				background-color: white;
+				left: 4px;
+				top: 299px;
+			}
+			.tslo{
+				position: relative;
+				
+			}
+			.ts{
+				position: absolute;
+				top: 117px;
+				left: 202px;
+				color: white;
+				font-weight: bold;
+				font-family:"times new roman" ;
+				font-size: 47px;
+				border:2px solid white;
+			}
+			.sj{
+				position: absolute;
+				top: 174px;
+				left: 270px;
+				color: white;
+				font-size: 20px;
+				border:2px solid white;
+				border-top-color: black;
+			}
+			.tw{
+				position: absolute;
+				top: 466px;
+				left:250px;
+				color: white;
+				font-family:"times new roman" ;
+				font-weight: bold;
+				font-size: 13px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="biaopan">
+			<div id="shizhen"></div>
+			<div id="fenzhen"></div>
+			<div id="miaozhen">
+				<div class="y1"></div>
+				<div class="y2"></div>
+			</div>
+			<div class="ts">&nbsp;TISSOT&nbsp;</div>
+			<div class="sj">1853</div>
+			<div class="tw">CHRONOMETRE</div>
+			<div class="tslo">TISSOT</div>
+			<div class="tssj">1983</div>
+			<div class="bpkd">
+				<div class="s0"></div>
+				<div class="y3"></div>
+				<div class="x6"></div>
+				<div class="z9"></div>
+			</div>
+			<div class="bpkd1">
+				<div class="s0"></div>
+				<div class="y3"></div>
+				<div class="x6"></div>
+				<div class="z9"></div>
+			</div>
+			<div class="bpkd2"><!-- shuzi-->
+				<div class="s0-1">12</div>
+				<div class="y3-1">3</div>
+				<div class="x6-1">6</div>
+				<div class="z9-1">9</div>
+			</div>
+			<div class="bpkd3"> <!--xiaokedu-->
+				<div class="s0-2"></div>
+				<div class="y3-2"></div>
+				<div class="x6-2"></div>
+				<div class="z9-2"></div>
+			</div>
+			<div class="bpkd4"> 
+				<div class="s0-2"></div>
+				<div class="y3-2"></div>
+				<div class="x6-2"></div>
+				<div class="z9-2"></div>
+			</div>
+			<div class="bpkd5"> 
+				<div class="s0-2"></div>
+				<div class="y3-2"></div>
+				<div class="x6-2"></div>
+				<div class="z9-2"></div>
+			</div>
+			<div class="bpkd6"> 
+				<div class="s0-2"></div>
+				<div class="y3-2"></div>
+				<div class="x6-2"></div>
+				<div class="z9-2"></div>
+			</div>
+			<div class="bpkd7">
+				<div class="s0-2"></div>
+				<div class="y3-2"></div>
+				<div class="x6-2"></div>
+				<div class="z9-2"></div>
+			</div>
+			<div class="bpkd8"> 
+				<div class="s0-2"></div>
+				<div class="y3-2"></div>
+				<div class="x6-2"></div>
+				<div class="z9-2"></div>
+			</div>
+			<div class="bpkd9"> 
+				<div class="s0-2"></div>
+				<div class="y3-2"></div>
+				<div class="x6-2"></div>
+				<div class="z9-2"></div>
+			</div>
+			<div class="bpkd10"> 
+				<div class="s0-2"></div>
+				<div class="y3-2"></div>
+				<div class="x6-2"></div>
+				<div class="z9-2"></div>
+			</div>
+			<div class="bpkd11"> 
+				<div class="s0-2"></div>
+				<div class="y3-2"></div>
+				<div class="x6-2"></div>
+				<div class="z9-2"></div>
+			</div>
+			<div class="bpkd12"> 
+				<div class="s0-2"></div>
+				<div class="y3-2"></div>
+				<div class="x6-2"></div>
+				<div class="z9-2"></div>
+			</div>
+			<div class="bpkd13"> 
+				<div class="s0-2"></div>
+				<div class="y3-2"></div>
+				<div class="x6-2"></div>
+				<div class="z9-2"></div>
+			</div>
+			<div class="bpkd14"> 
+				<div class="s0-2"></div>
+				<div class="y3-2"></div>
+				<div class="x6-2"></div>
+				<div class="z9-2"></div>
+			</div>
+			<div class="bpkd15"> 
+				<div class="s0-2"></div>
+				<div class="y3-2"></div>
+				<div class="x6-2"></div>
+				<div class="z9-2"></div>
+			</div>
+			<div class="bpkd16"> 
+				<div class="s0-2"></div>
+				<div class="y3-2"></div>
+				<div class="x6-2"></div>
+				<div class="z9-2"></div>
+			</div>
+		
+		</div>
+			<script>
+				function time() {
+					ll = new Date;
+					var mzsj = ll.getSeconds(); //秒针number
+					var fzsj = ll.getMinutes();
+					var szsj = ll.getHours();
+					var mm = document.getElementById("miaozhen");
+					var ff = document.getElementById("fenzhen");
+					var ss = document.getElementById("shizhen");
+					var dqjd = mzsj * 6; //得到角度秒数
+					dqjd = dqjd + 6;
+					var dqfd = fzsj * 6; //得到角度分数
+					
+					var dqsd = szsj * 30; //得到角度时数
+					
+					mm.style.webkitTransform = "rotate(" + dqjd + "deg)";
+					ff.style.webkitTransform = "rotate(" + dqfd + "deg)";
+					ss.style.webkitTransform = "rotate(" + dqsd + "deg)";
+				}
+				var mzyd = setInterval(time, 100);
+			</script>
+		
+	</body>
+
+</html>

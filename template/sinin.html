@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" /></meta>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+		<link href="../image/kj.ico" rel="shortcut icon"></link>
+		<title>
+			register . by Jeremy
+		</title>
+		<style type="text/css">
+			* {
+				position: relative;
+				margin: 0px;
+				border: 0px;
+				box-sizing: border-box;
+			}
+			
+			.all {
+				position: relative;
+				width: 100%;
+				background-color: #F5F5F5;
+				border: 1px solid #F5F5F5;
+			}
+			
+			.top {
+				position: relative;
+				width: 100%;
+				height: 50px;
+				background-color: white;
+			}
+			
+			.wbk {
+				position: relative;
+				width: 70%;
+				margin: 0 auto;
+			}
+			
+			#text {
+				position: relative;
+				width: 100%;
+				margin-top: 100px;
+				font-size: 1.6vw;
+				text-align: center;
+			}
+			
+			#qsrzh {
+				position: relative;
+				width: 100%;
+				margin: 30px auto;
+				text-align: center;
+			}
+			
+			#qsrmm {
+				position: relative;
+				width: 100%;
+				margin: 30px auto;
+				text-align: center;
+			}
+			
+			#qqrmm {
+				position: relative;
+				width: 100%;
+				margin: 30px auto;
+				text-align: center;
+			}
+			
+			#sjh {
+				position: relative;
+				width: 100%;
+				margin: 30px auto;
+				text-align: center;
+			}
+			
+			#zh {
+				position: relative;
+				width: 500px;
+				height: 50px;
+				font-size: 0.2vw;
+				border: 1px solid darkgray;
+				border-radius: 5px;
+			}
+			
+			#mm {
+				position: relative;
+				width: 500px;
+				height: 50px;
+				font-size: 0.2vw;
+				border: 1px solid darkgray;
+				border-radius: 5px;
+			}
+			
+			#mm1 {
+				position: relative;
+				width: 500px;
+				height: 50px;
+				font-size: 0.2vw;
+				border: 1px solid darkgray;
+				border-radius: 5px;
+			}
+			
+			#shoujihao {
+				position: relative;
+				width: 500px;
+				height: 50px;
+				font-size: 0.2vw;
+				border: 1px solid darkgray;
+				border-radius: 5px;
+			}
+			
+			.gouxuankuang {
+				position: relative;
+				font-size: 0.8vw;
+				width: 52%;
+				margin: 5px auto;
+				text-align: justify;
+			}
+			
+			.gouxuankuang:after {
+				content: '';
+				display: inline-block;
+				width: 100%;
+				position: relative;
+			}
+			
+			.gou {
+				position: relative;
+				width: 18px;
+				height: 18px;
+				cursor: pointer;
+			}
+			
+			#zhuce {
+				position: relative;
+				display: inline-block;
+				width: 128px;
+				height: 30px;
+				font-size: 1vw;
+				margin-top: 20px;
+				border: 1px solid darkgray;
+				cursor: pointer;
+			}
+			
+			#fanhui {
+				position: relative;
+				display: inline-block;
+				width: 128px;
+				height: 30px;
+				margin-top: 20px;
+				font-size: 1vw;
+				border: 1px solid darkgray;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="all">
+
+			<div class="top"></div>
+			<div class="wbk">
+				<div id="text">欢迎注册 老铁，稳稳稳 前端设计网站</div>
+
+				<div id="qsrzh">
+					<input id="zh" type="text" placeholder=" 请输入账号" value="" />
+				</div>
+
+				<div id="qsrmm">
+					<input id="mm" type="password" placeholder=" 请输入密码" value="" />
+				</div>
+
+				<div id="qqrmm">
+					<input id="mm1" type="password" placeholder=" 请确认密码" value="" />
+				</div>
+
+				<div id="sjh">
+					<input id="shoujihao" type="text" placeholder=" 请输入手机号" value="" />
+				</div>
+
+				<div class="gouxuankuang">
+					<input type="checkbox" class="gou" value="" /> &nbsp; &nbsp;*
+					<a id="duguo" href="">我读过,并同意老铁稳稳稳用户注册协议！</a>
+					<br />
+					<input type="button" id="zhuce" onclick="zc()" value="确认注册" />
+					<a href="login.html"><input type="button" id="fanhui" value="返回登录页面" /></a>
+				</div>
+			</div>
+		</div>
+		<script>
+			function zc() {
+				var zhanghao = document.getElementById("zh").value; //定义一个变量为输入的账号
+				var mima = document.getElementById("mm").value; //定义一个变量为输入的密码
+				var mima1 = document.getElementById("mm1").value; //定义一个变量为输入的验证密码
+				var shouji = document.getElementById("shoujihao").value; //定义一个变量为输入的手机号
+				chaxunzhanghao = sessionStorage.getItem(zhanghao); //查询输入的账号
+				if(mima == "" || mima1 == "" || shouji == "") { //都有值才能注册
+					if(mima == "") {
+						alert("请输入账号和密码");
+					} else {
+						if(mima1 == "") {
+							alert("请输入确认密码");
+						} else {
+							if(shouji == "") {
+								alert("请输入手机号");
+							}
+						}
+					}
+				} else {
+
+					if(chaxunzhanghao == null) { //如果从存储库查询不到账号内容就可以注册
+						var youshu = document.getElementById("zh").value.length;
+						if(youshu > 1) {
+							var shoujihao = document.getElementById("shoujihao").value;
+							var dianhuaguize = /^1(3|4|5|7|8)\d{9}$/; //电话号码规则
+							var chaxun = sessionStorage.getItem(shoujihao);
+							//alert(chaxun);
+							if(chaxun == null) { //如果手机号没被注册并且符合电话规则才能注册。
+								if(!(dianhuaguize.test(shoujihao))) { //如果不是手机号
+									alert("输入手机号有误");
+								} else {
+									var shoujihao = document.getElementById("shoujihao").value;
+									var mima = document.getElementById("mm").value; //密码
+									var mima1 = document.getElementById("mm1").value; //密码1
+									if(mima == mima1) { //密码输入相同才能注册
+										sessionStorage.setItem(shoujihao, mima); //把手机号，密码写入存库,并相对应
+										sessionStorage.setItem(zhanghao, zhanghao); //把输入的账号写入存库。
+										sessionStorage.setItem(zhanghao, mima); //把账号，密码写入存库,并相对应
+										alert("注册成功");
+										window.location.href = "login.html";
+										//								
+									} else {
+										alert("两次密码输入不同");
+									}
+								}
+							} else {
+								alert("该手机号已注册");
+								document.getElementById("shoujihao").style.background='pink';
+							}
+						} else { //如果能查询到就是已注册
+							alert("账号输入有误");
+						}
+
+					} else {
+						alert("该用户已注册");
+					}
+				} //最大的else
+			} //ff
+		</script>
+	</body>
+
+</html>

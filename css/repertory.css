@@ -1,0 +1,87 @@
+  /*          div{
+	border: 1px solid black; 
+}*/
+.all{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-top: 1px solid #3A3D43;
+	background:-moz-linear-gradient(top, #E1EFFB, #FEFEFF);  
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#E1EFFB), to(#FEFEFF)); 
+}
+.repertorycontents{
+	position: relative;
+	width: 70%;
+	margin: 4rem auto;
+}
+
+.line{
+	position: relative;
+	width: 100%;
+	height: auto;
+	text-align: justify;
+	max-height: 13rem;
+	margin-top: 1.6rem;
+}
+.line:after{
+	content: "";
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.demo{
+	position: relative;
+	display: inline-block;
+	width: 23.2%;
+	height: 13rem;
+    color: #3A3D43;
+	background-color: #F4F5F8;
+	padding: 1.2rem;
+	border: 1px solid #D2D4DA;
+	vertical-align: top;
+	cursor: pointer;
+    box-shadow: 0rem 0rem 0rem #888888;
+}
+.demo-title{
+	position: relative;
+	color: #4897F0;
+	font-size: 1.5rem;
+	margin: 0 0 0.5rem 0;
+}
+.demo-decribe{
+	position: relative;
+	font-size: 1rem;
+	margin: 0.6rem 0 0.3rem 0;
+}
+.demopoint{
+	position: absolute;;
+	font-size: 1rem;
+	bottom: 1.2rem;
+	left: 1rem;
+}
+.demopoint1{
+	position: absolute;;
+	font-size: 1rem;
+	bottom: 1.2rem;
+	right: 1rem;
+}
+.alldiscribe{
+	font-size: 1.4rem;
+	color: #3A3D43;
+	width: 100%;
+	text-align: left;
+}
+.bottom{
+	position: relative;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 1rem;
+	color: #3A3D43;
+	background-color: #F4F5F8;
+	line-height: 40px;
+	border: 1px solid #D2D4DA;
+}
+        

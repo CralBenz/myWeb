@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/></meta>
+   	    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+   	    <link href="../image/kj.ico" rel="shortcut icon"></link>
+	    <title>
+	        逐帧动画 . by Jeremy
+	    </title>
+	
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+		<link href="img/img/xw.ico" rel="icon" type="image/x-icon"/>
+		<style >
+			html,body{
+				/*overflow: hidden;*/
+			}
+			.ww{
+				position: relative;
+				width: 75px;
+				height: 114px;
+				/*border: 1px solid black;*/
+				animation: ww 12s linear infinite ;
+			}
+			.tt{
+				position: relative;
+				margin-top: 20px;
+				width: 100%;
+				
+			}
+			.iii{
+				position: relative;
+				display: block;
+				height: 100%;
+				margin: 0 auto;
+			}
+			.zzz{
+				position: relative;
+				margin:0px;
+				width: 100%;
+				text-align: center;
+				margin-top: 150px;
+				font-size: 30px;
+			}
+			@keyframes ww{
+				0%{ 
+					left:0px;
+					top: 0px;
+					}
+				25%{
+					top: 120px;
+					left:400px;
+					}
+
+				50%{
+					top: 0px;
+					left:600px;
+					}
+				100%{
+					top: 0px;
+					left:1000px;
+					}
+				}
+			.nn{
+				position: relative;
+				width: 100%;
+				height:100% ;
+				background-image: url(img/pao1.jpg);
+				background-position: 0px 0px;
+				animation: nn 1s steps(1) infinite ;
+			}
+			@keyframes nn{
+				0%{ background-position: 0px 0px;}
+				12.5%{background-position: -75px 0px;}
+				25%{background-position: -150px 0px;}
+				37.5%{background-position: -225px 0px;}
+				50%{background-position: -300px 0px;}
+				62.5%{background-position: -375px 0px;}
+				75%{background-position: -450px 0px;}
+				87.5%{background-position: -525px 0px;}
+				100%{background-position: -525px 0px;}
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="ww">
+			<div class="nn">
+				
+			</div>
+		</div>
+		<p class="zzz">逐帧动画，不占内存，只需下面一张图片</p>
+		<div class="tt">
+			<img class="iii" src="img/pao1.jpg"/>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/></meta>
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+        <link href="../image/kj.ico" rel="shortcut icon"></link>
+        <link href="assets/css/style.css" rel="stylesheet"/>
+         <title>
+            jquery闹钟 . by Jeremy
+        </title>
+    </head>
+    <body>
+        <div class="light" id="clock">
+            <div class="display">
+                <div class="weekdays">
+                </div>
+                <div class="ampm">
+                </div>
+                <div class="alarm">
+                </div>
+                <div class="digits">
+                </div>
+            </div>
+        </div>
+        <div class="button-holder">
+            <a class="button" id="switch-theme">
+                换个主题
+            </a>
+            <a class="alarm-button">
+            </a>
+        </div>
+        <div class="overlay">
+            <div id="alarm-dialog">
+                <h2>
+                    设置闹钟...
+                </h2>
+                <label class="hours">
+                    Hours
+                    <input min="0" type="number" value="0"/>
+                </label>
+                <label class="minutes">
+                    Minutes
+                    <input min="0" type="number" value="0"/>
+                </label>
+                <label class="seconds">
+                    Seconds
+                    <input min="0" type="number" value="0"/>
+                </label>
+                <div class="button-holder">
+                    <a class="button blue" id="alarm-set">
+                        Set
+                    </a>
+                    <a class="button red" id="alarm-clear">
+                        Clear
+                    </a>
+                </div>
+                <a class="close">
+                </a>
+            </div>
+        </div>
+        <div class="overlay">
+            <div id="time-is-up">
+                <h2>
+                    时间到了!
+                </h2>
+                <div class="button-holder">
+                    <a class="button blue">
+                        Close
+                    </a>
+                </div>
+            </div>
+        </div>
+        <audio id="alarm-ring" preload="">
+            <source src="assets/audio/ticktac.mp3" type="audio/mpeg">
+            </source>
+            <source src="assets/audio/ticktac.ogg" type="audio/ogg">
+            </source>
+        </audio>
+        <script src="../js/jquery.min.js">
+        </script>
+        <script src="assets/js/moment.js">
+        </script>
+        <script src="assets/js/script.js">
+        </script>
+    </body>
+</html>

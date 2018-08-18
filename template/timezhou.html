@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/></meta>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+    <link href="../image/kj.ico" rel="shortcut icon"></link>
+    <title>
+        时间轴 . by Jeremy
+    </title>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+		}
+		.all{
+			position: relative;
+			width: 90%;
+			height: 50px;
+			margin: 100px auto;
+		}
+		.line{
+			position: absolute;
+			height: 2px;
+			width:100%;
+			background-color:#3A3D43;
+			text-align: justify;
+		}
+		.line:after{
+			content: "";
+			display: inline-block;
+			position: relative;
+			width: 100%;
+		}
+		.row{
+			position: relative;
+			display: inline-block;
+			top:-25px;
+			width: 50px;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			color: #3A3D43;
+			border-radius: 50%;
+			background-color: orange;
+			cursor: pointer;
+		}
+		.row1{
+			position: absolute;
+			background-color: orangered;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 50px;
+			color: white;
+			left: 0px;
+			top:-25px;
+			z-index: 6;
+			font-size: 20px;
+		}
+		.all2{
+			position: relative;
+			width: 90%;
+			margin: 0px auto;
+		}
+		.coloum{
+			position: relative;
+			width: 2px;
+			height: 400px;
+			background-color:#3A3D43;
+			left: 20px;
+			border: 1px solid #3A3D43;
+		}
+
+		.point{
+			position: relative;
+			width: 60px;
+			height: 30px;
+			border-radius: 5px;
+			left: -10px;
+			margin-top: 50px;
+			color: #3A3D43;
+			text-align: center;
+			line-height: 30px;
+			background-color: orange;
+			cursor: pointer;
+		}
+		.point1{
+			margin-top:25px;
+		}
+		.aqul1{
+			position: absolute;
+			width: 60px;
+			height: 30px;
+			border-radius: 5px;
+			left: 11px;
+			top: 106px;
+			background-color: orangered;
+			text-align: center;
+			line-height: 30px;
+			color: white;
+			font-size: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$('.row').click(function(){
+				var rowlen = $(this).offset().left;
+				var aalen = $('.aa').offset().left;
+				var cha = rowlen - aalen;
+				var ii = $(this).index()+1;
+				$('.row1').html(ii);
+				$('.row1').stop().animate({
+					left: cha+'px'
+				});
+			})
+			$('.point').click(function(){
+				var rowlen = $(this).offset().top+26;
+				var aalen = $('.point1').offset().top;
+				var cha = rowlen - aalen;
+				var ii = $(this).index()+1;
+				$('.aqul1').html(ii);
+				$('.aqul1').stop().animate({
+					top: cha+'px'
+				});
+			})
+		})
+
+	</script>
+</head>
+
+<body>
+	<h2 style="margin-top: 20px;margin-left: 80px;">点点点，你就发现什么了...</h2>
+	<div class="all">
+		<div class="line">
+			<div class="row aa">1</div>
+			<div class="row">2</div>
+			<div class="row">3</div>
+			<div class="row">4</div>
+			<div class="row">5</div>
+		</div>
+		<div class="row1">1</div>
+	</div>
+	<div class="all2">
+		<div class="coloum">
+			<div class="point point1">1</div>
+			<div class="point">2</div>
+			<div class="point">3</div>
+			<div class="point">4</div>
+			<div class="point">5</div>
+		</div>
+		<div class="aqul1">2</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,560 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+.mid {
+	position: relative;
+	width: 100%;
+}
+
+.toppic {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	height: auto;
+}
+
+.mengban {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 0px;
+	width: 75%;
+	display: inline-block;
+	border-top: 890px solid rgba(0, 0, 0, .5);
+	border-right: 700px solid transparent;
+	z-index: 5;
+}
+
+.kehufuwu {
+	position: absolute;
+	top: -736px;
+	left: 163px;
+	width: 142%;
+	height: 300px;
+}
+
+.chang {
+	position: absolute;
+	bottom: 25px;
+	left: 18px;
+	width: 66px;
+	height: 48px;
+	cursor: pointer;
+	border-bottom: 2px solid white;
+	display: inline-block;
+	z-index: 6;
+}
+
+.tiao {
+	position: absolute;
+	bottom: 15px;
+	left: 23%;
+	color: #DDB321;
+	z-index: 6;
+	cursor: pointer;
+}
+
+.bian {
+	border-bottom: 2px solid #DDB321;
+}
+
+.chang2 {
+	margin-left: 80px;
+}
+
+.row1 {
+	position: relative;
+	width: 100%;
+	text-align: left;
+	font-size: 60px;
+	color: white;
+	font-weight: bold;
+	/*background-color: black;*/
+}
+
+.row2 {
+	position: relative;
+	width: 34%;
+	margin-left: 23%;
+	line-height: 60px;
+	text-align: center;
+	font-size: 35px;
+	font-weight: lighter;
+	font-style: italic;
+	color: black;
+	background-color: white;
+}
+
+.row3 {
+	margin-top: 12.5%;
+	position: relative;
+	width: 100%;
+	text-align: left;
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+	/*background-color: black;*/
+}
+
+.fadpic {
+	position: relative;
+	width: 200%;
+	/*height: 100%;*/
+}
+
+.slider1 {
+	position: relative;
+	width: 50%;
+	/*height: 100%;*/
+	float: left;
+}
+
+.slider2 {
+	position: relative;
+	width: 50%;
+	/*height: 100%;*/
+	float: left;
+}
+
+.fadpic:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.first {
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+
+.zykf {
+	position: relative;
+	font-size: 14px;
+	width: 130px;
+	margin-top: 5px;
+	margin-left: 53px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 30px;
+	border-bottom: 1px solid darkgray;
+}
+
+.zhuye {
+	font-weight: lighter;
+}
+
+.clysrx {
+	position: relative;
+	width: 40%;
+	font-size: 32px;
+	margin-left: 10%;
+	margin-top: 3%;
+	font-weight: lighter;
+}
+
+.cheliang {
+	position: relative;
+	font-weight: bold;
+}
+
+.wulun {
+	position: relative;
+	width: 56%;
+	font-size: 18px;
+	margin-left: 10%;
+	margin-top: 2.5%;
+	font-weight: lighter;
+	z-index: 4;
+}
+
+.zdysc {
+	position: relative;
+	width: 9%;
+	font-size: 18px;
+	line-height: 45px;
+	height: 45px;
+	overflow: hidden;
+	color: white;
+	margin-left: 10%;
+	margin-top: 2.5%;
+	cursor: pointer;
+	background-color: #DFB400;
+}
+
+.anniu {
+	position: relative;
+	display: inline-block;
+	margin-left: 21px;
+	transition: all 0.3s;
+}
+
+.anniu1 {
+	position: relative;
+	display: inline-block;
+	margin-left: 20px;
+	transition: all 0.3s;
+}
+
+.zdysc:hover>.anniu {
+	margin-left: 12px;
+}
+
+.zdysc:hover>.anniu1 {
+	margin-left: 10px;
+}
+
+.car {
+	position: absolute;
+	width: 50%;
+	height: 170%;
+	right: 0px;
+	top: 0px;
+	background-image: url(../img/texture.jpg);
+	background-size: cover;
+}
+
+.carpic {
+	position: absolute;
+	width: 107%;
+	left: -72px;
+	bottom: -60px;
+}
+
+.second {
+	position: relative;
+	width: 100%;
+	margin-top: 16%;
+	height: auto;
+	z-index: 3;
+}
+
+.zdysc1 {
+	position: relative;
+	width: 7.5%;
+	font-size: 18px;
+	line-height: 45px;
+	height: 45px;
+	overflow: hidden;
+	color: white;
+	margin-left: 10%;
+	margin-top: 2.5%;
+	cursor: pointer;
+	background-color: #DFB400;
+}
+
+.duan {
+	position: relative;
+	display: inline-block;
+	margin-left: 20px;
+	transition: all 0.3s;
+}
+
+.duan1 {
+	position: relative;
+	display: inline-block;
+	margin-left: 25px;
+	transition: all 0.3s;
+}
+
+.zdysc1:hover>.duan {
+	margin-left: 10px;
+}
+
+.zdysc1:hover>.duan1 {
+	margin-left: 6px;
+}
+
+.third {
+	position: relative;
+	width: 100%;
+	margin-top: -4%;
+}
+
+.peijiantu {
+	position: relative;
+	width: 100%;
+}
+
+.img {
+	width: 100%;
+}
+
+.peijiantext {
+	position: relative;
+	margin: 0 auto;
+	width: 80%;
+	margin-top: -7.5%;
+}
+
+.peijianwz {
+	position: relative;
+	display: inline-block;
+	height: 55px;
+	font-size: 27.5px;
+	font-weight: bold;
+	line-height: 55px;
+	width: 42%;
+	cursor: pointer;
+	border-bottom: 1px solid black;
+	background-color: white;
+	transition: all 0.2s;
+}
+
+.peijianwz:hover {
+	background-color: black;
+	color: white;
+}
+
+.peijianwz1 {
+	margin-left: 10%;
+}
+
+.danduxiao {
+	font-size: 22px;
+	font-weight: lighter;
+}
+
+.wzgs {
+	margin-left: 16px;
+}
+
+.fours {
+	position: relative;
+	width: 100%;
+	margin-top: 10%;
+	background-color: violet;
+}
+
+.leftpic {
+	position: relative;
+	width: 50%;
+	float: left;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.rightpic {
+	position: relative;
+	width: 50%;
+	float: left;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.fours:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.pic1 {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	transition: all 1s;
+	z-index: 3;
+}
+
+.leftpic:hover>.pic1 {
+	transform: scaleY(1.05) scaleX(1.05);
+}
+
+.rightpic:hover>.pic1 {
+	transform: scaleY(1.05) scaleX(1.05);
+}
+
+.mengban1 {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .7);
+	z-index: 5;
+}
+
+.mengban2 {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .7);
+	z-index: 5;
+}
+
+.zizi {
+	position: absolute;
+	top: 46%;
+	left: 40%;
+	color: white;
+	font-size: 27.5px;
+	font-weight: bold;
+	z-index: 8;
+}
+
+@media only screen and (min-width: 100px) and (max-width: 640px) {
+	.chang {
+		display: none;
+	}
+	.toppic {
+		height: 150%;
+	}
+	.fadpic {
+		width: 690%;
+	}
+	.slider1 {
+		position: relative;
+		width: 50%;
+		left: -600px;
+	}
+	.slider2 {
+		position: relative;
+		width: 50%;
+		left: -200px;
+	}
+	.mengban {
+		width: 75%;
+		border-top: 718px solid rgba(0, 0, 0, .5);
+		border-right: 600px solid transparent;
+	}
+	.tiao {
+		left: 6.5%;
+	}
+	.kehufuwu {
+		top: -618px;
+		left: 50px;
+		width: 222px;
+	}
+	.row1 {
+		width: 100%;
+		font-size: 27px;
+	}
+	.row2 {
+		width: 43%;
+		margin-left: 2px;
+		line-height: 33px;
+		text-align: center;
+		font-size: 20px;
+	}
+	.row3 {
+		margin-top: 12.5%;
+		font-size: 13px;
+	}
+	.first {
+		margin-top: 50px;
+	}
+	.zykf {
+		display: none;
+	}
+	.zhuye {
+		font-weight: lighter;
+	}
+	.clysrx {
+		width: 100%;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 22px;
+	}
+	.cheliang {
+		position: relative;
+		font-weight: bold;
+	}
+	.wulun {
+		width: 80%;
+		font-size: 12px;
+		line-height: 27px;
+		text-align: center;
+		margin: 0 auto;
+		margin-top: 30px;
+	}
+	.zdysc {
+		width: 25%;
+		font-size: 12px;
+		margin: 0 auto;
+		margin-top: 7.5%;
+		text-align: center;
+		z-index: 2;
+	}
+	.anniu {
+		margin: 0 auto;
+	}
+	.anniu1 {
+		display: none;
+	}
+	.car {
+		width: 100%;
+		height: 158%;
+		margin-top: 8%;
+	}
+	.carpic {
+		width: 80%;
+		left: 50px;
+		bottom: -30px;
+	}
+	.second {
+		margin-top: 101%;
+	}
+	.zdysc1 {
+		width: 20%;
+		font-size: 12px;
+		margin: 0 auto;
+		margin-top: 7.5%;
+		text-align: center;
+		z-index: 2;
+	}
+	.duan {
+		margin: 0 auto;
+	}
+	.duan1 {
+		display: none;
+	}
+	.third {
+		margin-top: 16%;
+	}
+	.peijiantu {
+		overflow: hidden;
+	}
+	.peijiantext {
+		margin-top: 10%;
+	}
+	.img {
+		width: 200%;
+		margin-left: -50%;
+	}
+	.peijianwz {
+		display: block;
+		height: 40px;
+		font-size: 19px;
+		line-height: 40px;
+		width: 100%;
+	}
+	.peijianwz:hover {
+		background-color: black;
+		color: white;
+	}
+	.peijianwz1 {
+		margin-left: 0px;
+	}
+	.danduxiao {
+		font-size: 22px;
+		font-weight: lighter;
+	}
+	.wzgs {
+		margin-left: 16px;
+	}
+	.fours {
+		margin-top: 15%;
+	}
+	.leftpic {
+		width: 100%;
+	}
+	.rightpic {
+		width: 100%;
+	}
+}

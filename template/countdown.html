@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+		<link href="../image/kj.ico" rel="shortcut icon"></link>
+		<title>
+			短信倒计时 . by Jeremy
+		</title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+			/*div{s
+	border: 1px solid gray;
+}*/
+			
+			body {
+				min-width: 1024px;
+			}
+			
+			.top_contents {
+				position: relative;
+				width: 100%;
+				height: auto;
+				border-bottom: 3px solid #FD5C25;
+			}
+			
+			.top {
+				position: relative;
+				width: 60%;
+				margin: 0px auto;
+				margin-top: 18px;
+				margin-bottom: 3px;
+			}
+			
+			.logo {
+				position: relative;
+				width: 154px;
+				height: 45px;
+				display: inline-block;
+				vertical-align: top;
+			}
+			
+			.logo_img {
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.wxlh {
+				position: relative;
+				display: inline-block;
+				width: 120px;
+				height: 45px;
+				line-height: 45px;
+				font-size: 15px;
+				font-family: "微软雅黑";
+				text-align: center;
+				vertical-align: top;
+				color: #5C5C5C;
+				font-weight: normal;
+			}
+			
+			.med_contents {
+				position: relative;
+				width: 50%;
+				margin: 0 auto;
+				text-align: center;
+			}
+			
+			.avatar {
+				position: relative;
+				height: 80px;
+				width: 80px;
+				border-radius: 50%;
+				margin: 0px auto;
+				margin-top: 40px;
+				border: 1px solid #F4AA8D;
+			}
+			
+			.avatar img {
+				position: absolute;
+				top: 0px;
+				left: 3.5px;
+				right: 0px;
+				bottom: 0px;
+				margin: auto;
+				width:75%;
+				height: 75%;
+				/*border-radius: 50%;*/
+				display: block;
+			}
+			
+			.kk {
+				position: relative;
+				width: 340px;
+				height: 40px;
+				margin: 0px auto;
+			}
+			
+			.tips {
+				border: 1px dashed #F8A387;
+				margin-top: 20px;
+				border-radius: 8px;
+			}
+			
+			.tips p {
+				margin: 0px;
+				font-size: 12px;
+				color: #919191;
+			}
+			
+			.phoneNo {
+				border: 1px solid #E0E0E0;
+				padding: 5px;
+				margin-top: 10px;
+			}
+			
+			.phoneimg {
+				position: relative;
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				vertical-align: top;
+			}
+			
+			.phoneNo {
+				position: relative;
+				text-align: left;
+			}
+			
+			.tel {
+				position: relative;
+				width: 88%;
+				display: inline-block;
+				height: 30px;
+				border: none;
+				vertical-align: top;
+				padding-left: 8px;
+			}
+			
+			.checkimg {
+				position: relative;
+				display: inline-block;
+				width: 23px;
+				height: 23px;
+				vertical-align: top;
+				margin-left: 3px;
+				margin-top: 3px;
+				margin-right: 3px;
+			}
+			
+			.submit {
+				margin-top: 20px;
+				background-color: #FC5D25;
+				color: white;
+				line-height: 40px;
+				cursor: pointer;
+			}
+			
+			.checkcode {
+				position: absolute;
+				height: 30px;
+				width: 100px;
+				right: -120px;
+				top: 3px;
+				border-radius: 8px;
+				font-size: 12px;
+				color: white;
+				background-color: #FC5D25;
+				line-height: 30px;
+				text-align: center;
+				cursor: pointer;
+			}
+			
+			.bottom_contents {
+				position: relative;
+				width: 100%;
+				border-top: 3px solid #FCA280;
+				margin-top: 200px;
+				font-size: 10px;
+				padding-top: 15px;
+				padding-bottom: 50px;
+			}
+			
+			.bottom_contents a {
+				color: black;
+				text-decoration: none;
+			}
+			
+			.bottom_contents a:hover {
+				color: #FF7300;
+			}
+			
+			.bottom_contents p {
+				margin-top: 8px;
+				text-align: center;
+			}
+			
+			.mengban {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, .4);
+				z-index: 6;
+			}
+			
+			.sorry {
+				position: absolute;
+				top: 208px;
+				left: 0px;
+				right: 0px;
+				margin: auto;
+				width: 400px;
+				height: 180px;
+				border-radius: 5px;
+				z-index: 8;
+				background-color: #FFFFFF;
+			}
+			
+			.sorry_top {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 30px;
+				line-height: 30px;
+				padding-left: 15px;
+				color: white;
+				font-size: 12px;
+				border-radius: 5px 5px 0px 0px;
+				background-color: #F86531;
+			}
+			
+			.sorry_top img {
+				position: absolute;
+				right: 8px;
+				top: 8px;
+				width: 12px;
+				height: 12px;
+				cursor: pointer;
+			}
+			
+			.sorry_text {
+				position: relative;
+				width: 72%;
+				height: 100%;
+				margin: 0 auto;
+				margin-top: 68px;
+			}
+			
+			.sorry_text p {
+				position: relative;
+				color: #F86531;
+				text-align: center;
+				font-size: 12px;
+				text-align: left;
+			}
+			
+			.sorry_submit {
+				position: relative;
+				width: 80px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+				color: white;
+				font-size: 12px;
+				cursor: pointer;
+				background-color: #F86531;
+				border-radius: 10px;
+				margin: 0 auto;
+				margin-top: 30px;
+			}
+			
+			.success {
+				display: inline-block;
+				width: 90px;
+				margin-left: 10%;
+			}
+			.msg{
+				position: absolute;
+				display: none;
+				width: 400px;
+				height: 100px;
+				top: 80px;
+				left: 0px;
+				right: 0px;
+				margin: auto;
+				background-color: rgba(0,0,0,.6);
+				text-align: center;
+				line-height: 100px;
+				color: white;
+				z-index: 999;
+				border-radius: 20px;
+			}
+			.open{
+				display: block;
+			}
+			input:-webkit-autofill {
+			    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--弹出框部分-->
+		<div class="mengban" style="display: none;">
+			<div class="sorry sorrypage">
+				<div class="sorry_top">提示
+					<img class="topclose" src="img/close.png" />
+				</div>
+				<div class="sorry_text">
+					<p>很抱歉，此手机号绑定有多个账号，请联系客服确认，客服热线：13838384438</p>
+					<div class="sorry_submit">确认</div>
+				</div>
+			</div>
+			<div class="sorry successpage">
+				<div class="sorry_top">微信联合登录
+					<img class="topclose" src="img/close.png" />
+				</div>
+				<div class="sorry_text">
+					<p>微信账号大呲花已绑定成功，现在就可以一键登录会员啦~</p>
+					<div class="sorry_submit success">进入会员中心</div>
+					<div class="sorry_submit success">返回首页</div>
+				</div>
+			</div>
+		</div>
+		<div class="msg">短信验证码已发送至手机，请注意查收！</div>
+		<!--顶部-->
+		<div class="top_contents">
+			<div class="top">
+				<div class="wxlh">稳稳稳开发平台</div>
+			</div>
+		</div>
+		<!--中间部分-->
+		<div class="med_contents">
+			<div class="avatar">
+				<img src="img/kj.jpeg" />
+			</div>
+			<div class="kk tips">
+				<p>系统将为您 </p>
+			</div>
+			<div class="kk phoneNo">
+				<img class="phoneimg" src="img/phone.png" />
+				<input id="phoneNo" class="tel" type="tel" name="" id="" value="" placeholder="请输入手机号" />
+			</div>
+			<div class="kk phoneNo">
+				<img class="checkimg" src="img/短信验证码.png" />
+				<input id="checkNo" class="tel" type="tel" name="" id="" value="" placeholder="请输入手机验证码" />
+				<div class="checkcode">获取验证码</div>
+			</div>
+			<div class="kk submit"> 提交</div>
+		</div>
+		<!--底部-->
+		<div class="bottom_contents">
+			<p>技术支持：稳稳稳设计开发小组：
+				<a href="http://www.chinawutong.com/" target="_blank" rel="nofollow">稳稳稳</a> |
+				<a href="/" target="_blank">我们非常稳</a> |
+				<a href="http://www.19888.tv/" target="_blank" rel="nofollow">溜的一批</a> |
+				<a href="http://twp.spzs.com/" target="_blank">设计稳</a> |
+				<a href="http://yl.spzs.com/" target="_blank">代码稳</a>
+			</p>
+			<p>版权所有：
+				<a href="/" target="_blank">服务稳</a> | 免费电话：13838384438 | 备案：
+				<a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">稳稳稳设计开发团队</a> |
+				<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11011502002908" target="_blank" rel="nofollow">稳稳稳设计开发团队</a>
+			</p>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script>
+		$(function() {
+			//弹出框
+			$(".sorrypage").hide();
+			$(".successpage").hide();
+			//input背景色
+			$("input").focus(function() {
+				$("input").css("background-color", "#F4F5F8");
+			});
+			$("input").blur(function() {
+				$("input").css("background-color", "#FEFEFF");
+			});
+
+			//判断弹出框
+			$(".submit").click(function() {
+				var getPhone = $("#phoneNo").val();
+				var getCheck = $("#checkNo").val();
+				if(getPhone == '' || getCheck == '') {
+					if(getPhone == '') {
+						alert("请输入手机号");
+						$("#phoneNo").css("background-color", 'pink');
+					} else if(getCheck == '') {
+						alert("请输入验证码");
+						$("#checkNo").css("background-color", 'pink');
+					}
+				} else {
+					if(getPhone == 1) {
+						$(".mengban").show();
+						$(".successpage").show();
+					} else if(getPhone == 2) {
+						$(".mengban").show();
+						$(".sorrypage").show();
+					}
+				}
+			})
+			//关闭按钮
+			$(".topclose").click(function() {
+				$(".sorrypage").hide();
+				$(".successpage").hide();
+				$(".mengban").hide();
+			})
+			//验证码
+			var sentcode = true;
+			$('.checkcode').click(function() {
+				var time = 60;
+				$code = $(this);
+				if(sentcode) {
+					setTimeout(function(){
+						$('.msg').addClass('open');
+					},500)
+					setTimeout(function(){
+						$('.msg').removeClass('open');
+					},2500)
+					sentcode = false;
+					var tt = setInterval(function() {
+						time--;
+						$code.html(time + 's后重新获取');
+						if(time == 0) {
+							clearInterval(tt);
+							$code.html('重新获取');
+							sentcode = true;
+						}
+					}, 1000)
+				}
+			})
+
+		})
+	</script>
+
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+		<link href="../image/kj.ico" rel="shortcut icon"></link>
+		<title>拼多多 .by Jeremy</title>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+				box-sizing: border-box;
+			}
+			
+			html,
+			body {
+				background-color: whitesmoke;
+			}
+			
+			.quanbu {
+				position: relative;
+				width: 100%;
+			}
+			
+			.top {
+				position: fixed;
+				border-bottom: 4px solid red;
+				width: 100%;
+				background-color: white;
+				left: 0px;
+				top: 0px;
+				z-index: 6;
+			}
+			
+			.pdd {
+				position: relative;
+				float: left;
+				width: 24%;
+				text-align: right;
+				margin-top: 1.5%;
+			}
+			
+			.img-pdd {
+				position: relative;
+			}
+			
+			.daohanglan {
+				position: relative;
+				width: 72%;
+				float: right;
+				margin-top: 3%;
+				margin-bottom: 2.5%;
+			}
+			
+			.xulie {
+				position: relative;
+				list-style: none;
+				width: 120px;
+				height: 20px;
+				font-family: "微软雅黑";
+				font-size: 1.3vw;
+				text-align: center;
+				line-height: 17px;
+				display: inline-block;
+				border-left: 1px solid black;
+				color: dimgray;
+				cursor: pointer;
+			}
+			
+			.top:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			
+			.fudong {
+				position: fixed;
+				left: 8%;
+				top: 53%;
+				z-index: 5;
+			}
+			
+			.sy1 {
+				border-left: none;
+				margin-right: -18px;
+			}
+			
+			.sy {
+				color: red;
+				text-decoration: none;
+			}
+			
+			.banner {
+				position: relative;
+				width: 100%;
+				background-color: whitesmoke;
+				overflow: hidden;
+			}
+			
+			.banner-row {
+				position: relative;
+				width: auto;
+			}
+			
+			.banner-row:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			
+			.img {
+				position: relative;
+				width: 100%;
+			}
+			
+			.banner-pic {
+				position: relative;
+				width: 100%;
+				float: left;
+				cursor: pointer;
+			}
+			
+			.rightarrow {
+				position: absolute;
+				top: 0px;
+				bottom: 0px;
+				margin: auto;
+				right: 0px;
+				height: 60px;
+				width: 60px;
+				border-radius: 50%;
+				background-color: gray;
+				text-align: center;
+				line-height: 60px;
+				font-size: 25pt;
+				color: white;
+				opacity: 0.3;
+				cursor: pointer;
+			}
+			
+			.rightarrow:hover {
+				opacity: 0.5;
+			}
+			
+			.leftarrow {
+				position: absolute;
+				top: 0px;
+				bottom: 0px;
+				margin: auto;
+				left: 0px;
+				height: 60px;
+				width: 60px;
+				border-radius: 50%;
+				background-color: gray;
+				text-align: center;
+				line-height: 60px;
+				font-size: 25pt;
+				color: white;
+				opacity: 0.3;
+				cursor: pointer;
+			}
+			
+			.leftarrow:hover {
+				opacity: 0.5;
+			}
+			
+			.dian {
+				position: relative;
+				width: 100%;
+				height: 30px;
+				margin-top: 40px;
+				text-align: center;
+			}
+			
+			.dd {
+				position: relative;
+				height: 17px;
+				width: 17px;
+				border-radius: 50%;
+				margin: 0px 30px;
+				background-color: white;
+				display: inline-block;
+				cursor: pointer;
+				border: 4px solid gainsboro;
+			}
+			
+			.dd-1 {
+				cursor: pointer;
+				background-color: grey;
+			}
+			
+			.med {
+				position: relative;
+				width: 100%;
+			}
+			
+			.jchd {
+				position: relative;
+				width: 76%;
+				margin: 0 auto;
+				/*border: 1px solid green;*/
+				/*background-color: whitesmoke;*/
+			}
+			
+			.xian {
+				position: relative;
+				height: 1.3px;
+				width: 100%;
+				margin-top: 50px;
+				background-color: darkgray;
+			}
+			
+			.zz {
+				position: absolute;
+				left: 0;
+				top: -40px;
+				font-family: "微软雅黑";
+				font-size: 1.3vw;
+			}
+			
+			.gd {
+				position: absolute;
+				right: 10px;
+				top: -30px;
+				font-family: "微软雅黑";
+				font-size: 1.4vw;
+				color: gray;
+				cursor: pointer;
+			}
+			
+			.tupianqu {
+				position: relative;
+				width: 100%;
+				margin-top: 30px;
+			}
+			
+			.zstp {
+				position: relative;
+				width: 100%;
+				padding: 13px;
+				background-color: white;
+				display: block;
+				cursor: pointer;
+			}
+			
+			.zstp:hover {
+				opacity: 0.7;
+			}
+			
+			.ee {
+				position: relative;
+				width: 100%;
+				margin: 16px 0;
+			}
+			
+			.aa {
+				position: relative;
+				width: 27.2%;
+				float: left;
+				padding: 8px;
+				padding-left: 0px;
+			}
+			
+			.bb {
+				position: relative;
+				width: 43%;
+				float: left;
+				padding: 8px;
+			}
+			
+			.cc {
+				position: relative;
+				width: 29.4%;
+				float: left;
+				padding: 8px;
+				padding-right: 0px;
+			}
+			
+			.tupianqu:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			
+			.jxzt {
+				position: relative;
+				width: 76%;
+				margin: 80px auto;
+			}
+			
+			.zu1 {
+				position: relative;
+				width: 100%;
+				margin-top: 20px;
+			}
+			
+			.aa1 {
+				position: relative;
+				width: -webkit-calc(50% - 25px);
+				float: left;
+			}
+			
+			.bb1 {
+				position: relative;
+				width: -webkit-calc(50% - 25px);
+				float: left;
+				margin-left: 50px;
+			}
+			
+			.zstp1 {
+				position: relative;
+				width: 100%;
+				cursor: pointer;
+			}
+			
+			.zu1:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			
+			.foot {
+				position: relative;
+				width: 100%;
+				background-color: white;
+			}
+			
+			.foot-tp {
+				position: relative;
+				width: 100%;
+			}
+			
+			.foot-img {
+				position: relative;
+				width: 100%;
+			}
+			
+			.foot-wz {
+				position: relative;
+				width: 100%;
+			}
+			
+			.fotz {
+				position: relative;
+				float: left;
+				width: 100%;
+				margin: 0 auto;
+				text-align: center;
+				background-color: white;
+			}
+			
+			.foot-wz:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			
+			.fotz-1 {
+				position: relative;
+				list-style: none;
+				width: 140px;
+				height: 20px;
+				margin-bottom: 50px;
+				font-family: "微软雅黑";
+				font-size: 1.4vw;
+				text-align: center;
+				line-height: 20px;
+				display: inline-block;
+				border-left: 1px solid gray;
+				color: dimgray;
+				cursor: pointer;
+			}
+			
+			.fotz-2 {
+				border-left: none;
+			}
+			
+			.fotz-3 {
+				width: 200px;
+			}
+			
+			.bottom {
+				position: relative;
+				width: 100%;
+				background-color: #3D3C3C;
+				border: 1px solid #3D3C3C;
+			}
+			
+			.beijing {
+				position: relative;
+				width: 100%;
+				text-align: center;
+				margin-top: 2%;
+				color: gainsboro;
+				font-family: "微软雅黑";
+				font-size: 1.4vw;
+			}
+			
+			.gongan {
+				position: relative;
+				width: 100%;
+				text-align: center;
+				margin-top: 2%;
+				margin-bottom: 1%;
+			}
+			
+			.gatp {
+				position: relative;
+				margin: 0 auto;
+			}
+			
+			@media only screen and (min-width: 1px) and (max-width: 750px) {
+				.quanbu {
+					width: 100%;
+				}
+				.img-pdd {
+					width: 100%;
+				}
+				.daohanglan {
+					margin-top: 1%;
+				}
+				.xulie {
+					width: 60px;
+					border-left: none;
+				}
+				.fotz-1 {
+					margin-bottom: 10px;
+					border-left: none;
+				}
+				.leftarrow {
+					width: 20px;
+					height: 20px;
+					line-height: 20px;
+					font-size: 0.5vw;
+				}
+				.rightarrow {
+					width: 20px;
+					height: 20px;
+					line-height: 20px;
+					font-size: 0.5vw;
+				}
+				.dian {
+					margin-top: 10px;
+				}
+				.dd {
+					height: 8px;
+					width: 8px;
+					margin: 0px 10px;
+					border: 1px solid gainsboro;
+				}
+			}
+			
+			@media only screen and (min-width: 1px) and (max-width: 310px) {
+				.gatp {
+					width: 100%;
+				}
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<div class="quanbu">
+			<div class="top">
+				<div class="pdd">
+					<img class="img-pdd" src="img/pdd_logo_v3.png" />
+				</div>
+				<div class="daohanglan">
+					<ul>
+						<li class="xulie sy1">
+							<a class="sy " href="https://www.pinduoduo.com/ " target="_blank ">首页</a>
+						</li>
+						<li class="xulie">商家入驻</li>
+						<li class="xulie">热点资讯</li>
+						<li class="xulie">社会招聘</li>
+						<li class="xulie">校园招聘</li>
+						<li class="xulie">下载App</li>
+						<li class="xulie">帮助中心</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="banner ">
+				<div class="banner-row ">
+					<div class="banner-pic ">
+						<img class="img " src="img/pdd_index_xingesheng_banner.jpg " />
+					</div>
+					<div class="banner-pic ">
+						<img class="img " src="img/pdd_index_jixian_banner.jpg " />
+					</div>
+					<div class="banner-pic ">
+						<img class="img " src="img/pdd_index_campus_banner.jpg " />
+					</div>
+					<div class="banner-pic ">
+						<img class="img " src="img/pdd_index_xingesheng_banner.jpg " />
+					</div>
+				</div>
+				<div class="leftarrow ">
+					<span id="zuo "> &lt;</span>
+				</div>
+				<div class="rightarrow ">
+					<span id="you ">&gt;</span>
+				</div>
+			</div>
+			<div class="dian ">
+				<div class="dd dd-1 "></div>
+				<div class="dd "></div>
+				<div class="dd "> </div>
+			</div>
+
+			
+		</div>
+	</body>
+	<script>
+			$(window).load(function() {
+				//使用window。load时，浏览器会把多有html页面和css样式还有js内容见全部加载后，再去解析load函数。
+				g = $(".banner-row").children().length; //获取通中子元素的个数；
+				$(".banner-pic").css("width", 1 / g * 100 + "%") //使轮播图的的宽度等于其中一个的宽度
+				$(".banner-row").css("width", g * 100 + "%")
+				w = $(".banner-pic").width();
+				k = 0;
+				h = $(".top").height();
+				$(".banner").css("margin-top", h)
+
+				$(".rightarrow").click(function() {
+					right();
+				})
+				$(".leftarrow").click(function() {
+					left();
+				})
+
+				var zidongbo = setInterval("right()", 3000);
+				$(".banner").hover(function() {
+					clearInterval(zidongbo);
+//					console.log(zidongbo);
+				}, function() {
+					zidongbo = setInterval("right()", 3000);
+				})
+//				console.log(zidongbo);
+				
+				$(".dd").click(function() {
+					k = $(this).index();
+					$(this).addClass("dd-1")
+					$(this).siblings().removeClass("dd-1")
+					$(".banner-row").stop().animate({
+						left: -w * k + "px"
+					})
+				})
+
+			})
+
+			function right() {
+				if(k < g - 1) {
+					k++;
+					$(".dian").children().eq(k).addClass("dd-1");
+					$(".dian").children().eq(k).siblings().removeClass("dd-1");
+					$(".banner-row").stop().animate({
+						left: -w * k + "px"
+					})
+					if(k == g - 1) {
+						$(".dian").children().eq(0).addClass("dd-1");
+						$(".dian").children().eq(0).siblings().removeClass("dd-1");
+					}
+				} else if(k == g - 1) {
+					$(".banner-row").css("left", "0px")
+					k = 0;
+					k++;
+					$(".dian").children().eq(k).addClass("dd-1");
+					$(".dian").children().eq(k).siblings().removeClass("dd-1");
+					$(".banner-row").stop().animate({
+						left: -w * k + "px"
+					})
+				} else {}
+			}
+
+			function left() {
+				if(k > 0) {
+					k--;
+					$(".dian").children().eq(k).addClass("dd-1");
+					$(".dian").children().eq(k).siblings().removeClass("dd-1");
+					$(".banner-row").stop().animate({
+						left: -w * k + "px"
+					})
+				} else if(k == 0) {
+					k = g - 1;
+					$(".banner-row").css("left", -w * k + "px")
+					k--;
+					$(".dian").children().eq(k).addClass("dd-1");
+					$(".dian").children().eq(k).siblings().removeClass("dd-1");
+					$(".banner-row").stop().animate({
+						left: -w * k + "px"
+					})
+				} else {}
+			}
+		</script>
+</html>

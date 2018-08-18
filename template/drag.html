@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>拖拽效果</title>
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+		<link href="../image/kj.ico" rel="shortcut icon"></link>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+		}
+		#kk{
+			position: relative;
+			width: 66%;
+			height: 460px;
+			background-color: gainsboro;
+			margin: 50px auto;
+		}
+		#kk:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.ff{
+			position: relative;
+			width: 267px;
+			width: -moz-calc((100% - 80px) / 3);
+			width:-webkit-calc((100% - 80px) / 3);
+			width: -o-calc((100% - 80px) / 3);
+			height: 200px;
+			display: inline-block;
+			float: left;
+			margin: 20px 0 0 20px;
+			cursor: pointer;
+			border-radius:20px ;
+		}
+		.ff1{
+			background-color: red;
+		}
+		.ff2{
+			background-color: orange;
+		}
+		.ff3{
+			background-color: yellow;
+		}
+		.ff4{
+			background-color: green;
+		}
+		.ff5{
+			background-color: greenyellow;
+		}
+		.ff6{
+			background-color: blue;
+		}
+	li img{
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+	</style>
+	<body>
+		<ul id="kk">
+			<li class="ff ff1">
+				<img src="img/1.jpeg"/>
+			</li>
+			<li class="ff ff2">
+				<img src="img/2.jpeg"/>
+			</li>
+			<li class="ff ff3">
+				<img src="img/3.jpeg"/>
+			</li>
+			<li class="ff ff4">
+				<img src="img/4.jpeg"/>
+			</li>
+			<li class="ff ff5">
+				<img src="img/5.jpeg"/>
+			</li>
+			<li class="ff ff6">
+				<img src="img/6.jpeg"/>
+			</li>
+		</ul>
+	</body>
+	<script>
+		//点击获取位置
+		var allff = document.getElementsByTagName('li');
+		var nav = document.getElementById('kk');
+		var len = allff.length;
+		var arr=[];
+		//css
+		for(let i=0;i<len;i++){
+			arr.push([allff[i].offsetLeft,allff[i].offsetTop]);
+			//为了有足够时间
+			setTimeout(function(){
+				allff[i].style.position='absolute';
+				allff[i].style.left=arr[i][0]+'px';
+				allff[i].style.top=arr[i][1]+'px';
+				allff[i].style.margin=0;
+			},0)
+		}
+		//监听绑定drag事件；
+		nav.addEventListener('mousedown',drag);
+		document.addEventListener('mousemove',drag);
+		document.addEventListener('mouseup',drag);
+		var ifclick = false;
+		var xstar,ystar,x1,y1,x2,y2,ele,iceele,zindex=66,ing=null;
+		//事件分流;
+		function drag(ev){
+			ev = ev||window;//鼠标事件
+			ev.preventDefault();
+			switch(ev.type){
+				//click
+				case'mousedown':
+				if(ev.target.parentNode.tagName==='LI'){
+					ifclick=true;
+					ele = ev.target.parentNode;
+					//鼠标一开始点击时候位置
+					x1 = ev.clientX;
+					y1 = ev.clientY;
+					xstar = ele.offsetLeft;
+					ystar = ele.offsetTop;
+					ele.style.zIndex = zindex++;
+					
+				}
+
+				break;
+				//move
+				case'mousemove':
+				//after click this go 
+				if(ifclick){
+					//鼠标点击时移动后的位置
+					x2 = ev.clientX;
+					y2 = ev.clientY;
+					//移动的距离=2-1；移动后的坐标为移动的距离+初始位置的距离。
+					var nowx = x2 - x1 + xstar;
+					var nowy = y2 - y1 + ystar;
+					ele.style.left=nowx+'px';
+					ele.style.top=nowy+'px';
+					//相对距离；移动后的位置和每个位置做比较。
+					var Xre = x2 - nav.offsetLeft;
+					var Yre = y2 - nav.offsetTop;
+					var elwidth = ele.offsetWidth;
+					var elheight = ele.offsetHeight;
+					for(var n=0; n<len;n++ ){
+						allff[n].style.transform='';
+						if(
+							ele!=allff[n]&&
+							Xre>allff[n].offsetLeft&&
+							Xre<allff[n].offsetLeft+elwidth&&
+							Yre>allff[n].offsetTop&&
+							Yre<allff[n].offsetTop+elheight
+						){
+							allff[n].style.transform='scale(1.05)'
+							iceele = allff[n];
+							ing=n;
+						}else {
+							if(
+								!(ing!=null&&
+								Xre>allff[ing].offsetLeft&&
+								Xre<allff[ing].offsetLeft+elwidth&&
+								Yre>allff[ing].offsetTop&&
+								Yre<allff[ing].offsetTop+elheight)
+							){
+								console.log('没在碰撞');
+								iceele = null;
+							}
+						}
+					}
+				}
+				break;
+				//up
+				case'mouseup':
+					ifclick = false;
+					if(iceele){
+						ele.style.left=iceele.offsetLeft+'px';
+						ele.style.top=iceele.offsetTop+'px';
+						iceele.style.left=xstar+'px';
+						iceele.style.top=ystar+'px';
+						iceele.style.transform='';
+						iceele=null;
+						ele=null;
+					}else{
+//						console.log(ele);
+						if(ele !=undefined){
+							ele.style.left=xstar+'px';
+							ele.style.top=ystar+'px';
+						}
+						
+					}
+				
+				break;
+			}
+			
+		}
+	</script>
+</html>

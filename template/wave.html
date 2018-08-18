@@ -1,0 +1,130 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+		<link href="../image/kj.ico" rel="shortcut icon"></link>
+		<title>
+			纯CSS波浪 . by Jeremy
+		</title>
+		<style type="text/css">
+			
+			/*背景*/
+			.waveWrapper {
+				overflow: hidden;
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				margin: auto;
+				background-image: -webkit-linear-gradient(top, #5896E9, #2B64CF);
+				 /*Safari 5.1 - 6.0*/ 
+				background-image: -o-linear-gradient(top ,#5896E9, #2B64CF);
+				 Opera 11.1 - 12.0 
+				/*background-image: -moz-linear-gradient(top ,#5896E9, #2B64CF);
+				/* Firefox 3.6 - 15 */
+				background-image: linear-gradient(to top, #5896E9, #2B64CF);
+			}
+			
+			.waveWrapperInner {
+				position: absolute;
+				width: 100%;
+				overflow: hidden;
+				height: 100%;
+				bottom: -1px;
+				
+			}
+			
+			.bgTop {
+				z-index: 15;
+				opacity: 0.5;
+			}
+			
+			.bgMiddle {
+				z-index: 10;
+				opacity: 0.4;
+			}
+			
+			.bgBottom {
+				z-index: 5;
+				opacity: 0.3;
+			}
+			
+			.wave {
+				position: absolute;
+				left: 0;
+				width: 200%;
+				height: 100%;
+				background-repeat: repeat no-repeat;
+				background-position: 0 bottom;
+				transform-origin: center bottom;
+			}
+			
+			.waveTop {
+				background-size: 50% 100px;
+				opacity: 0.5;
+			}
+			
+			.waveAnimation .waveTop {
+				animation: move_wave 5s linear infinite;
+				-webkit-animation: move_wave 5s linear .5s infinite;
+				-moz-animation: move_wave 5s linear .5s infinite;
+				-ms-animation: move_wave 5s linear .5s infinite;
+				-o-animation: move_wave 5s linear .5s infinite;
+			}
+			
+			.waveMiddle {
+				background-size: 50% 120px;
+				opacity: 0.6;
+			}
+			
+			.waveAnimation .waveMiddle {
+				animation: move_wave 10s linear infinite;
+				-webkit-animation: move_wave 10s linear infinite;
+				-moz-animation: move_wave 10s linear infinite;
+				-ms-animation: move_wave 10s linear infinite;
+				-o-animation: move_wave 10s linear infinite;
+			}
+			
+			.waveBottom {
+				background-size: 50% 100px;
+				opacity: 0.7;
+			}
+			
+			.waveAnimation .waveBottom {
+				animation: move_wave 15s linear infinite;
+				-webkit-animation: move_wave 15s linear infinite;
+				-moz-animation: move_wave 15s linear infinite;
+				-ms-animation: move_wave 15s linear infinite;
+				-o-animation: move_wave 15s linear infinite;
+			}
+			@keyframes move_wave {
+				0% {
+					transform: translateX(0) translateZ(0) scaleY(1)
+				}
+				50% {
+					transform: translateX(-25%) translateZ(0) scaleY(0.55)
+				}
+				100% {
+					transform: translateX(-50%) translateZ(0) scaleY(1)
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="waveWrapper waveAnimation">
+			<div class="waveWrapperInner bgTop">
+				<div class="wave waveTop" style="background-image: url('img/wave-top.png')"></div>
+			</div>
+			<div class="waveWrapperInner bgMiddle">
+				<div class="wave waveMiddle" style="background-image: url('img/wave-mid.png')"></div>
+			</div>
+			<div class="waveWrapperInner bgBottom">
+				<div class="wave waveBottom" style="background-image: url('img/wave-bot.png')"></div>
+			</div>
+		</div>
+	</body>
+
+</html>

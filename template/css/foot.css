@@ -1,0 +1,203 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+.bottom{
+	position: relative;
+	width: 100%;
+	background-image: url(../img/bg-footer.jpg);
+	border: 1px solid black;
+	margin-top: 3px;
+}
+.footnav{
+	position: relative;
+	width: 42%;
+	margin: 0 auto;
+	margin-top:20px ;
+}
+.footul{
+	color: white;
+	font-size:18px ;
+	text-align: justify;
+	max-height: 35px;
+}
+.footul:after{
+	position: relative;
+	content: "";
+	display: inline-block;
+	width: 100%;	
+}
+.footli{
+	position: relative;
+	margin-top: 5px;
+	display: inline-block;
+	list-style: none;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.footli:hover{
+	opacity: 0.6;
+}
+.footdaohang{
+	position: relative;
+	width: 75%;
+	margin: 0px auto;
+	margin-top: 20px;
+	text-align: justify;
+	max-height: 285px;
+	/*border: 1px solid red;*/
+}
+.footdaohang:after{
+	position: relative;
+	content: "";
+	display: inline-block;
+	width: 100%;
+}
+.footlist{
+	position: relative;
+	width: 22.5%;
+	display: inline-block;
+	/*border: 1px solid red;*/
+}
+.tou{
+	position: relative;
+	font-size: 18px;
+	color: white;
+	line-height: 45px;
+	font-weight: bold;
+	text-align: left;
+	width: 100%;
+}
+.baixian{
+	position: relative;
+	width: 100%;
+	height: 1px;
+	margin: 0px 0px 17px 0px;
+	background-color: white;
+}
+.listcon{
+	position: relative;
+	width: 100%;
+	line-height: 37px;
+	font-size: 16px;
+	color: #D9D9DA;
+	text-align: left;
+	height: 37px;
+	transition: all 0.3s;
+	cursor: pointer;
+	
+}
+.listcon:hover{
+	opacity: 0.6;
+}
+.tubiao{
+	position: relative;
+	width: 75%;
+	margin: 0 auto;
+	/*border: 1px solid red;*/
+	text-align: center;
+}
+.guanzhu {
+	position: relative;
+	font-size: 18px;
+	color: white;
+	line-height: 45px;
+	font-weight: bold;
+	font-style: normal;
+	text-align: left;
+	width: 100%;
+	margin: 5px;
+}
+.fa{
+	margin-right: 20px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.fa:hover{
+	opacity: 0.6;
+}
+.banquan{
+	position: relative;
+	width: 75%;
+	font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 2rem;
+    /*border: 1px solid red;*/
+}
+.gongan{
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 2rem;
+}
+.place{
+	position: relative;
+	margin-left: 5px;
+}
+.jing{
+	text-decoration: underline;
+}
+@media only screen and (min-width: 100px) and (max-width: 640px) {
+
+.footnav{
+	width: 100%;
+}
+.footul{
+	margin: 0 auto;
+	width: 75%;
+	font-size:15px ;
+	text-align: left;
+	max-height: none;
+}
+.footli{
+	width: 100%;
+	line-height: 50px;
+	cursor: pointer;
+	margin-top: 0px;
+	border-bottom: 1px solid #4B4A4A;
+}
+.footdaohang{
+	display: none;
+}
+
+.tubiao{
+	width: 75%;
+	margin: 0 auto;
+	text-align: center;
+}
+.guanzhu {
+	display: block;
+	font-size: 15px;
+	line-height: 45px;
+	width: 100%;
+}
+
+.banquan{
+	width: 90%;
+	font-size: 12px;
+    margin-top: 33px;
+}
+.gongan{
+	margin-bottom: 10px;
+	font-size: 12px;
+}
+.place{
+	position: relative;
+	margin-left: 5px;
+}
+.jing{
+	text-decoration: underline;
+}
+.fa{
+	margin-right: 0px;
+}
+}
